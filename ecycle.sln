@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecycle", "ecycle.csproj", "{7DEEAEB9-EBA5-4AC9-8C88-A1ADC71F830E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DEEAEB9-EBA5-4AC9-8C88-A1ADC71F830E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DEEAEB9-EBA5-4AC9-8C88-A1ADC71F830E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DEEAEB9-EBA5-4AC9-8C88-A1ADC71F830E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DEEAEB9-EBA5-4AC9-8C88-A1ADC71F830E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F36DDBB2-C379-48EF-98A0-0275438C9D12}
+	EndGlobalSection
+EndGlobal
