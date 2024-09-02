@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\ecycle.csproj",
+      "projectUniqueName": "C:\\Users\\farhanarieframadhan\\Downloads\\ecycle\\ecycle.csproj",
       "projectName": "ecycle",
-      "projectPath": "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\ecycle.csproj",
+      "projectPath": "C:\\Users\\farhanarieframadhan\\Downloads\\ecycle\\ecycle.csproj",
       "packagesPath": "C:\\Users\\farhanarieframadhan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\obj\\",
+      "outputPath": "C:\\Users\\farhanarieframadhan\\Downloads\\ecycle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\farhanarieframadhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
