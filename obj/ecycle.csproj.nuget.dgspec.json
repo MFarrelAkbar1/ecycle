@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\ecycle.csproj": {}
+    "C:\\Users\\lukk\\ecycle\\ecycle\\ecycle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\ecycle.csproj": {
+    "C:\\Users\\lukk\\ecycle\\ecycle\\ecycle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\ecycle.csproj",
+        "projectUniqueName": "C:\\Users\\lukk\\ecycle\\ecycle\\ecycle.csproj",
         "projectName": "ecycle",
-        "projectPath": "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\ecycle.csproj",
-        "packagesPath": "C:\\Users\\farhanarieframadhan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\farhanarieframadhan\\source\\repos\\ecycle\\obj\\",
+        "projectPath": "C:\\Users\\lukk\\ecycle\\ecycle\\ecycle.csproj",
+        "packagesPath": "C:\\Users\\lukk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukk\\ecycle\\ecycle\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\farhanarieframadhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
