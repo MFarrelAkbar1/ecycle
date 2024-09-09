@@ -3,10 +3,86 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ecycle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Main Window" Height="1080" Width="1920"
+        Background="LightBlue">
+
     <Grid>
 
+        <Button Content="Dashboard Pembeli" FontSize="16" Foreground="White" Width="250" Height="50" Margin="791,207,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DashboardPembeli_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#FF2196F3" Offset="0"/>
+                    <GradientStop Color="#FF03A9F4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderThickness>
+                <Thickness>1</Thickness>
+            </Button.BorderThickness>
+        </Button>
+
+        <Button Content="Edukasi Daur Ulang" FontSize="16" Foreground="White" Width="250" Height="50" Margin="791,363,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="EdukasiDaurUlang_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#FF2196F3" Offset="0"/>
+                    <GradientStop Color="#FF03A9F4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderThickness>
+                <Thickness>1</Thickness>
+            </Button.BorderThickness>
+        </Button>
+
+        <Button Content="Halaman Rekomendasi Produk" FontSize="16" Foreground="White" Width="250" Height="50" Margin="786,510,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="RekomendasiProduk_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#FF2196F3" Offset="0"/>
+                    <GradientStop Color="#FF03A9F4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderThickness>
+                <Thickness>1</Thickness>
+            </Button.BorderThickness>
+        </Button>
+
+        <Button Content="Fitur Penjual" FontSize="16" Foreground="White" Width="250" Height="50" Margin="782,686,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="FiturPenjual_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#FF2196F3" Offset="0"/>
+                    <GradientStop Color="#FF03A9F4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderThickness>
+                <Thickness>1</Thickness>
+            </Button.BorderThickness>
+        </Button>
     </Grid>
 </Window>

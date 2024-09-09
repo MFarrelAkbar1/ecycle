@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,14 +11,39 @@ using System.Windows.Shapes;
 
 namespace ecycle
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void DashboardPembeli_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 dashboardPembeli = new Window1();
+            dashboardPembeli.Show();
+            this.Close(); // Opsional: Menutup MainWindow
+        }
+
+        private void EdukasiDaurUlang_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 edukasiDaurUlang = new Window2();
+            edukasiDaurUlang.Show();
+            this.Close(); // Opsional: Menutup MainWindow
+        }
+
+        private void RekomendasiProduk_Click(object sender, RoutedEventArgs e)
+        {
+            Window3 rekomendasiProduk = new Window3();
+            rekomendasiProduk.Show();
+            this.Close(); // Opsional: Menutup MainWindow
+        }
+
+        private void FiturPenjual_Click(object sender, RoutedEventArgs e)
+        {
+            Window4 fiturPenjual = new Window4();
+            fiturPenjual.Show();
+            this.Close(); // Opsional: Menutup MainWindow
         }
     }
 }
