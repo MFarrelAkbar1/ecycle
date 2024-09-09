@@ -7,3 +7,4 @@ Anggota 2: Ryan Krishandi Lukito - 22/497249/TK/54488<br/>
 Anggota 3: Farhan Arief Ramadhan - 22/497297/TK/54496<br/>
 
 ![class diagram](https://github.com/user-attachments/assets/a5a2fde8-71bd-4bfe-a215-49cf533d2a7a)
+![Uploading E-Cycle ERD-ERD Homework.drawio.png…]()
