@@ -1,0 +1,4 @@
+[submodule "ecycle-be"]
+	path = ecycle-be
+	url = https://github.com/FarhanAR09/ecycle-be.git
+	branch = main
