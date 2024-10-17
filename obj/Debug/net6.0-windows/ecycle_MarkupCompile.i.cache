@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\HP VICTUS\source\repos\ecycle\ecycle\obj\Debug\net6.0-windows\
+C:\Users\HP VICTUS\source\repos\ecycle\obj\Debug\net6.0-windows\
 ecycle
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\HP VICTUS\source\repos\ecycle\ecycle\App.xaml
-61799800192
+C:\Users\HP VICTUS\source\repos\ecycle\App.xaml
+7-1126185094
 
-10573150944
-194-1701117732
-Login.xaml;MainWindow.xaml;Window1.xaml;Window2.xaml;Window3.xaml;Window4.xaml;
+27-1664326976
+321-269718132
+Login.xaml;MainWindow.xaml;Signup.xaml;Window1.xaml;Window2.xaml;Window3.xaml;Window4.xaml;
 
-True
+False
 

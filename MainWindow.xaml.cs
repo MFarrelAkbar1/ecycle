@@ -45,5 +45,10 @@ namespace ecycle
             fiturPenjual.Show();
             this.Close(); // Opsional: Menutup MainWindow
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

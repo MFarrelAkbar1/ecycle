@@ -1,0 +1,102 @@
+﻿<Window x:Class="ecycle.Signup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Signup" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="ModernTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="#E0E0E0" BorderThickness="1" Background="#FFFFFF">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Margin="5,7,5,7" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="Placeholder" Text="{TemplateBinding Tag}" FontSize="14" Padding="10,0,0,0"
+                                           Foreground="Gray" VerticalAlignment="Center"
+                                           Visibility="Collapsed" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#2E7D32"/>
+                                <Setter TargetName="border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="8" ShadowDepth="0" Color="#2E7D32" Opacity="0.3"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#4CAF50" Offset="0.0"/>
+                <GradientStop Color="#2E7D32" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Border CornerRadius="20" Width="450" Height="500" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.2"/>
+            </Border.Effect>
+            <StackPanel Margin="40">
+                <TextBlock Text="Create Your Account" FontSize="28" FontWeight="Bold" Foreground="#333" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+                <TextBox x:Name="txtFullName" Style="{StaticResource ModernTextBox}" Height="50" Margin="0,0,0,20"
+                         FontSize="16" Tag="Full Name" TextChanged="txtFullName_TextChanged"/>
+
+                <TextBox x:Name="txtEmail" Style="{StaticResource ModernTextBox}" Height="50" Margin="0,0,0,20"
+                         FontSize="16" Tag="Email Address" TextChanged="txtEmail_TextChanged"/>
+
+                <Grid Margin="0,0,0,30">
+                    <PasswordBox x:Name="txtPassword" Height="50" FontSize="16" 
+                                 PasswordChanged="txtPassword_PasswordChanged">
+                        <PasswordBox.Template>
+                            <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                <Border x:Name="border" CornerRadius="8" BorderBrush="#E0E0E0" BorderThickness="1" Background="#FFFFFF">
+                                    <ScrollViewer x:Name="PART_ContentHost" Margin="5,7,5,7" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="#2E7D32"/>
+                                        <Setter TargetName="border" Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="8" ShadowDepth="0" Color="#2E7D32" Opacity="0.3"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </PasswordBox.Template>
+                    </PasswordBox>
+                    <TextBlock x:Name="PasswordPlaceholder" Text="Password" FontSize="14" Padding="10,0,0,0"
+                               Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                               IsHitTestVisible="False" />
+                </Grid>
+
+                <Button Content="Sign Up" FontSize="18" Width="200" Height="50" Background="#4CAF50" Foreground="White" 
+                        Click="SignUp_Click" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="25">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#2E7D32"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

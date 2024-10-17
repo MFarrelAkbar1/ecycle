@@ -4,85 +4,70 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Main Window" Height="1080" Width="1920"
-        Background="LightBlue">
+        Title="E-Cycle" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Button Content="Dashboard Pembeli" FontSize="16" Foreground="White" Width="250" Height="50" Margin="791,207,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DashboardPembeli_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#FF2196F3" Offset="0"/>
-                    <GradientStop Color="#FF03A9F4" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-            <Button.BorderThickness>
-                <Thickness>1</Thickness>
-            </Button.BorderThickness>
-        </Button>
 
-        <Button Content="Edukasi Daur Ulang" FontSize="16" Foreground="White" Width="250" Height="50" Margin="791,363,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="EdukasiDaurUlang_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#FF2196F3" Offset="0"/>
-                    <GradientStop Color="#FF03A9F4" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-            <Button.BorderThickness>
-                <Thickness>1</Thickness>
-            </Button.BorderThickness>
-        </Button>
+        <Border Grid.Column="0" Background="DarkGreen" CornerRadius="20" Margin="10,10,26,178" Padding="10" BorderThickness="0">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="5" Direction="270" Opacity="0.5"/>
+            </Border.Effect>
+            <StackPanel VerticalAlignment="Stretch">
+                <TextBlock Text="E-Cycle" FontSize="28" Foreground="White" FontWeight="Bold" Margin="0,20,0,20" HorizontalAlignment="Left"/>
 
-        <Button Content="Halaman Rekomendasi Produk" FontSize="16" Foreground="White" Width="250" Height="50" Margin="786,510,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="RekomendasiProduk_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#FF2196F3" Offset="0"/>
-                    <GradientStop Color="#FF03A9F4" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-            <Button.BorderThickness>
-                <Thickness>1</Thickness>
-            </Button.BorderThickness>
-        </Button>
+                <Button Height="50" Margin="0,10,0,0" FontSize="16" Foreground="LightGreen" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:/Users/HP VICTUS/source/repos/ecycle/pictures/homelogo.png" Width="30" Height="30" Margin="10,0,10,0"/>
+                        <TextBlock Text="HOME" Foreground="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
 
-        <Button Content="Fitur Penjual" FontSize="16" Foreground="White" Width="250" Height="50" Margin="782,686,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="FiturPenjual_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#FF2196F3" Offset="0"/>
-                    <GradientStop Color="#FF03A9F4" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-            <Button.BorderThickness>
-                <Thickness>1</Thickness>
-            </Button.BorderThickness>
-        </Button>
+                <Button Height="50" Margin="0,10,0,0" FontSize="16" Foreground="LightGreen" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:/Users/HP VICTUS/source/repos/ecycle/pictures/cartlogo.png" Width="30" Height="30" Margin="10,0,10,0"/>
+                        <TextBlock Text="CART" Foreground="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Height="50" Margin="0,10,0,0" FontSize="16" Foreground="LightGreen" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:/Users/HP VICTUS/source/repos/ecycle/pictures/articleslogo.png" Width="30" Height="30" Margin="10,0,10,0"/>
+                        <TextBlock Text="ARTICLES" Foreground="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Height="50" Margin="0,10,0,0" FontSize="16" Foreground="LightGreen" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:/Users/HP VICTUS/source/repos/ecycle/pictures/accountlogo.png" Width="30" Height="30" Margin="10,0,10,0"/>
+                        <TextBlock Text="ACCOUNT" Foreground="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+        <StackPanel Background="LightGreen" VerticalAlignment="Top" Margin="211,20,20,0" Grid.ColumnSpan="2">
+            <TextBlock Text="E-Cycle" FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+            <UniformGrid Columns="4" Rows="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="10" Margin="10" Background="White">
+                    <StackPanel>
+                        <Image Source="product_placeholder.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                        <TextBlock Text="Tas Daur Ulang" FontSize="14" FontWeight="Bold" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock Text="Rp55.000" FontSize="14" Foreground="Black" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="10" Margin="10" Background="White">
+                    <StackPanel>
+                        <Image Source="product_placeholder.png" Width="150" Height="150" Margin="0,0,0,10"/>
+                        <TextBlock Text="Tas Daur Ulang" FontSize="14" FontWeight="Bold" Foreground="Black" TextAlignment="Center"/>
+                        <TextBlock Text="Rp55.000" FontSize="14" Foreground="Black" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+        </StackPanel>
     </Grid>
 </Window>

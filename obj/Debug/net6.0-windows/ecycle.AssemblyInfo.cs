@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ecycle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37c854a953ecce00247bcba50e35d726af92d206")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71d374f957e7095a86c2eb1e8eef20e1c2a29920")]
 [assembly: System.Reflection.AssemblyProductAttribute("ecycle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ecycle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

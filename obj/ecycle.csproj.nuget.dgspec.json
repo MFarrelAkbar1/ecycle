@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle\\ecycle.csproj": {}
+    "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle\\ecycle.csproj": {
+    "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle\\ecycle.csproj",
+        "projectUniqueName": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle.csproj",
         "projectName": "ecycle",
-        "projectPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle\\ecycle.csproj",
+        "projectPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle.csproj",
         "packagesPath": "C:\\Users\\HP VICTUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\ecycle\\obj\\",
+        "outputPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\VisualStudio\\Microsoft VS\\Shared\\NuGetPackages"
@@ -60,7 +60,28 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.35, 6.0.35]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.35, 6.0.35]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.35, 6.0.35]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.35, 6.0.35]"
+            }
+          ],
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             },
@@ -68,7 +89,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
