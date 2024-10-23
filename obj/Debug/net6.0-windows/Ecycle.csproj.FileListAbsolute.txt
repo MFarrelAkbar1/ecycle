@@ -1,0 +1,68 @@
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Account.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Article.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Cart.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Home.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\App.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle_MarkupCompile.cache
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle_MarkupCompile.lref
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\bin\Debug\net6.0-windows\Ecycle.exe
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\bin\Debug\net6.0-windows\Ecycle.deps.json
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\bin\Debug\net6.0-windows\Ecycle.runtimeconfig.json
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\bin\Debug\net6.0-windows\Ecycle.dll
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\bin\Debug\net6.0-windows\Ecycle.pdb
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\MainWindow.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Account.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Article.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Cart.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Pages\Home.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Themes\Generic.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.g.resources
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.GeneratedMSBuildEditorConfig.editorconfig
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.AssemblyInfoInputs.cache
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.AssemblyInfo.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.csproj.CoreCompileInputs.cache
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.dll
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\refint\Ecycle.dll
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.pdb
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Ecycle.genruntimeconfig.cache
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\ref\Ecycle.dll
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\bin\Debug\net6.0-windows\Ecycle.exe
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\bin\Debug\net6.0-windows\Ecycle.deps.json
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\bin\Debug\net6.0-windows\Ecycle.runtimeconfig.json
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\bin\Debug\net6.0-windows\Ecycle.dll
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\bin\Debug\net6.0-windows\Ecycle.pdb
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Account.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Article.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Cart.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Home.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle_MarkupCompile.cache
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle_MarkupCompile.lref
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Account.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Article.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Cart.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Pages\Home.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Themes\Generic.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.g.resources
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.AssemblyInfoInputs.cache
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.AssemblyInfo.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.csproj.CoreCompileInputs.cache
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.dll
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\refint\Ecycle.dll
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.pdb
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Ecycle.genruntimeconfig.cache
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\ref\Ecycle.dll
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Login.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Signup.g.cs
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Login.baml
+C:\Users\HP VICTUS\Downloads\Ecycle\Ecycle\obj\Debug\net6.0-windows\Signup.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Login.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Signup.g.cs
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Login.baml
+D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\desain interface\Ecycle\obj\Debug\net6.0-windows\Signup.baml
