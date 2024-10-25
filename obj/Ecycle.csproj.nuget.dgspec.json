@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\desain interface\\ecycle\\Ecycle.csproj": {}
+    "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\Ecycle.csproj": {}
   },
   "projects": {
-    "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\desain interface\\ecycle\\Ecycle.csproj": {
+    "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\Ecycle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\desain interface\\ecycle\\Ecycle.csproj",
+        "projectUniqueName": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\Ecycle.csproj",
         "projectName": "Ecycle",
-        "projectPath": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\desain interface\\ecycle\\Ecycle.csproj",
-        "packagesPath": "C:\\Users\\Ryan\\.nuget\\packages\\",
-        "outputPath": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\desain interface\\ecycle\\obj\\",
+        "projectPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\Ecycle.csproj",
+        "packagesPath": "C:\\Users\\HP VICTUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\Microsoft VS\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP VICTUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -63,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
