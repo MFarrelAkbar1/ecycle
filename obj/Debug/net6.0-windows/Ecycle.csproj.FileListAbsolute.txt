@@ -139,3 +139,5 @@ C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.pdb
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.genruntimeconfig.cache
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\ref\Ecycle.dll
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\App.baml
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Product.baml
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Product.g.cs
