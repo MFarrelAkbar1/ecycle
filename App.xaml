@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Ecycle"
              StartupUri="Login.xaml">
+    
     <Application.Resources>
-         
+        <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
     </Application.Resources>
 </Application>

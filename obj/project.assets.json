@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\Ecycle.csproj",
+      "projectUniqueName": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj",
       "projectName": "Ecycle",
-      "projectPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\Ecycle.csproj",
+      "projectPath": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj",
       "packagesPath": "C:\\Users\\HP VICTUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP VICTUS\\source\\repos\\ecycle\\obj\\",
+      "outputPath": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\VisualStudio\\Microsoft VS\\Shared\\NuGetPackages"
