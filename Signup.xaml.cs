@@ -11,7 +11,7 @@ namespace Ecycle
         private bool isPasswordVisible = false;
         private bool isConfirmPasswordVisible = false;
 
-        // Replace these with your actual Azure PostgreSQL credentials
+        // Replace with actual Azure PostgreSQL credentials
         private readonly string connectionString = "Host=<your_azure_host>;Port=5432;Username=<your_username>;Password=<your_password>;Database=<your_database>";
 
         public Signup()
@@ -26,7 +26,76 @@ namespace Ecycle
             this.Close();
         }
 
-        // Placeholder management and visibility toggle methods remain unchanged...
+        // Placeholder management for text fields
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender == txtFullName)
+                txtFullNamePlaceholder.Visibility = Visibility.Collapsed;
+            else if (sender == txtEmail)
+                txtEmailPlaceholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender == txtFullName && string.IsNullOrWhiteSpace(txtFullName.Text))
+                txtFullNamePlaceholder.Visibility = Visibility.Visible;
+            else if (sender == txtEmail && string.IsNullOrWhiteSpace(txtEmail.Text))
+                txtEmailPlaceholder.Visibility = Visibility.Visible;
+        }
+
+        private void PasswordBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender == txtPasswordBox)
+                txtPasswordPlaceholder.Visibility = Visibility.Collapsed;
+            else if (sender == txtConfirmPasswordBox)
+                txtConfirmPasswordPlaceholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void PasswordBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender == txtPasswordBox && string.IsNullOrWhiteSpace(txtPasswordBox.Password))
+                txtPasswordPlaceholder.Visibility = Visibility.Visible;
+            else if (sender == txtConfirmPasswordBox && string.IsNullOrWhiteSpace(txtConfirmPasswordBox.Password))
+                txtConfirmPasswordPlaceholder.Visibility = Visibility.Visible;
+        }
+
+        // Toggle visibility for Password field
+        private void PasswordEyeIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (isPasswordVisible)
+            {
+                txtPasswordText.Visibility = Visibility.Collapsed;
+                txtPasswordBox.Visibility = Visibility.Visible;
+                txtPasswordBox.Password = txtPasswordText.Text;
+                isPasswordVisible = false;
+            }
+            else
+            {
+                txtPasswordText.Text = txtPasswordBox.Password;
+                txtPasswordText.Visibility = Visibility.Visible;
+                txtPasswordBox.Visibility = Visibility.Collapsed;
+                isPasswordVisible = true;
+            }
+        }
+
+        // Toggle visibility for Confirm Password field
+        private void ConfirmPasswordEyeIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (isConfirmPasswordVisible)
+            {
+                txtConfirmPasswordText.Visibility = Visibility.Collapsed;
+                txtConfirmPasswordBox.Visibility = Visibility.Visible;
+                txtConfirmPasswordBox.Password = txtConfirmPasswordText.Text;
+                isConfirmPasswordVisible = false;
+            }
+            else
+            {
+                txtConfirmPasswordText.Text = txtConfirmPasswordBox.Password;
+                txtConfirmPasswordText.Visibility = Visibility.Visible;
+                txtConfirmPasswordBox.Visibility = Visibility.Collapsed;
+                isConfirmPasswordVisible = true;
+            }
+        }
 
         private async void SignUp_Click(object sender, RoutedEventArgs e)
         {
