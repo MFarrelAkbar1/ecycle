@@ -1,83 +1,116 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Ecycle.Models; // Ensure this namespace is imported
+using Npgsql;
 
 namespace Ecycle.Pages
 {
     public partial class UserProduct : Page
     {
-        private bool isEditMode = false;
-        private string? editingProductId;
+        private readonly string connectionString = "Host=<your_azure_host>;Port=5432;Username=<your_username>;Password=<your_password>;Database=<your_database>";
 
         public UserProduct()
         {
             InitializeComponent();
+            LoadProducts();
         }
 
+        private async Task<List<ProductModel>> GetProductsAsync()
+        {
+            var products = new List<ProductModel>();
+            try
+            {
+                using var conn = new NpgsqlConnection(connectionString);
+                await conn.OpenAsync();
+
+                string query = "SELECT product_id, name, description, price, stock, sold, seller_name, seller_location FROM products";
+                using var cmd = new NpgsqlCommand(query, conn);
+                using var reader = await cmd.ExecuteReaderAsync();
+
+                while (await reader.ReadAsync())
+                {
+                    products.Add(new ProductModel
+                    {
+                        ProductId = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Description = reader.GetString(2),
+                        Price = reader.GetDecimal(3),
+                        Stock = reader.GetInt32(4),
+                        Sold = reader.GetInt32(5),
+                        SellerName = reader.IsDBNull(6) ? null : reader.GetString(6),
+                        SellerLocation = reader.IsDBNull(7) ? null : reader.GetString(7)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading products: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return products;
+        }
+
+        public async void LoadProducts()
+        {
+            var products = await GetProductsAsync();
+            ProductList.Children.Clear();
+
+            foreach (var product in products)
+            {
+                var border = new Border
+                {
+                    Background = System.Windows.Media.Brushes.LightGray,
+                    CornerRadius = new CornerRadius(10),
+                    Padding = new Thickness(10),
+                    Margin = new Thickness(5)
+                };
+
+                var stackPanel = new StackPanel();
+                stackPanel.Children.Add(new TextBlock { Text = product.Name, FontWeight = FontWeights.Bold });
+                stackPanel.Children.Add(new TextBlock { Text = $"Price: {product.Price:C}" });
+                stackPanel.Children.Add(new TextBlock { Text = $"Stock: {product.Stock}" });
+                stackPanel.Children.Add(new TextBlock { Text = $"Sold: {product.Sold}" });
+                stackPanel.Children.Add(new TextBlock { Text = product.Description, TextWrapping = TextWrapping.Wrap });
+
+                border.Child = stackPanel;
+                ProductList.Children.Add(border);
+            }
+        }
+
+        // Event handler for the Back button
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate back to Account page
-            NavigationService?.Navigate(new Account());
+            NavigationService.GoBack(); // Navigate back to the previous page
         }
 
+        // Event handler for Add Product button
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            SetFormForAdd();
+            // Show product form for adding a new product
             ProductForm.Visibility = Visibility.Visible;
+            ResetForm(); // Clear existing form fields for a new product
         }
 
-        private void EditProduct_Click(object sender, RoutedEventArgs e)
+        private async void SaveProduct_Click(object sender, RoutedEventArgs e)
         {
-            isEditMode = true;
-            editingProductId = "ID_PRODUK";
-            txtProductName.Text = string.Empty;
-            txtProductDescription.Text = string.Empty;
-            FormTitle.Text = "Update Product";
-            btnSave.Content = "Update Product";
-            ProductForm.Visibility = Visibility.Visible;
+            // Logic for saving a new or updated product
         }
 
-        private void DeleteProduct_Click(object sender, RoutedEventArgs e)
+        private async void DeleteProduct(int productId)
         {
-            var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                MessageBox.Show("Product deleted successfully!", "Delete Product", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
-        private void SaveProduct_Click(object sender, RoutedEventArgs e)
-        {
-            if (isEditMode)
-            {
-                MessageBox.Show("Product updated successfully!", "Update Product", MessageBoxButton.OK, MessageBoxImage.Information);
-                ResetForm();
-            }
-            else
-            {
-                MessageBox.Show("Product added successfully!", "Add Product", MessageBoxButton.OK, MessageBoxImage.Information);
-                ResetForm();
-            }
-            ProductForm.Visibility = Visibility.Collapsed;
-        }
-
-        private void SetFormForAdd()
-        {
-            isEditMode = false;
-            editingProductId = null;
-            txtProductName.Text = string.Empty;
-            txtProductDescription.Text = string.Empty;
-            FormTitle.Text = "Add New Product";
-            btnSave.Content = "Add Product";
+            // Logic for deleting a product
         }
 
         private void ResetForm()
         {
+            // Clear all form fields
             txtProductName.Text = string.Empty;
             txtProductDescription.Text = string.Empty;
-            FormTitle.Text = "Add New Product";
-            btnSave.Content = "Add Product";
-            isEditMode = false;
+            txtProductPrice.Text = string.Empty;
+            txtProductStock.Text = string.Empty;
         }
     }
 }
