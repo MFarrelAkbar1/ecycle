@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using Npgsql;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Ecycle
 {
@@ -11,8 +13,7 @@ namespace Ecycle
         private bool isPasswordVisible = false;
         private bool isConfirmPasswordVisible = false;
 
-        // Replace with actual Azure PostgreSQL credentials
-        private readonly string connectionString = "Host=<your_azure_host>;Port=5432;Username=<your_username>;Password=<your_password>;Database=<your_database>";
+        private readonly string registerEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/auth/register";
 
         public Signup()
         {
@@ -26,13 +27,14 @@ namespace Ecycle
             this.Close();
         }
 
-        // Placeholder management for text fields
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             if (sender == txtFullName)
                 txtFullNamePlaceholder.Visibility = Visibility.Collapsed;
             else if (sender == txtEmail)
                 txtEmailPlaceholder.Visibility = Visibility.Collapsed;
+            else if (sender == txtAddress)
+                txtAddressPlaceholder.Visibility = Visibility.Collapsed;
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
@@ -41,6 +43,8 @@ namespace Ecycle
                 txtFullNamePlaceholder.Visibility = Visibility.Visible;
             else if (sender == txtEmail && string.IsNullOrWhiteSpace(txtEmail.Text))
                 txtEmailPlaceholder.Visibility = Visibility.Visible;
+            else if (sender == txtAddress && string.IsNullOrWhiteSpace(txtAddress.Text))
+                txtAddressPlaceholder.Visibility = Visibility.Visible;
         }
 
         private void PasswordBox_GotFocus(object sender, RoutedEventArgs e)
@@ -59,7 +63,6 @@ namespace Ecycle
                 txtConfirmPasswordPlaceholder.Visibility = Visibility.Visible;
         }
 
-        // Toggle visibility for Password field
         private void PasswordEyeIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (isPasswordVisible)
@@ -78,7 +81,6 @@ namespace Ecycle
             }
         }
 
-        // Toggle visibility for Confirm Password field
         private void ConfirmPasswordEyeIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (isConfirmPasswordVisible)
@@ -100,9 +102,9 @@ namespace Ecycle
         private async void SignUp_Click(object sender, RoutedEventArgs e)
         {
             string fullName = txtFullName.Text;
-            string email = txtEmail.Text;
             string password = txtPasswordBox.Password;
             string confirmPassword = txtConfirmPasswordBox.Password;
+            string address = txtAddress.Text;
 
             if (password != confirmPassword)
             {
@@ -110,8 +112,7 @@ namespace Ecycle
                 return;
             }
 
-            // Save to database
-            bool isRegistered = await RegisterUserAsync(fullName, email, password);
+            bool isRegistered = await RegisterUserAsync(fullName, password, address);
             if (isRegistered)
             {
                 MessageBox.Show($"Welcome, {fullName}! You have registered successfully.", "Registration Successful", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -123,27 +124,30 @@ namespace Ecycle
             }
         }
 
-        private async Task<bool> RegisterUserAsync(string fullName, string email, string password)
+        private async Task<bool> RegisterUserAsync(string nama, string password, string alamat)
         {
             try
             {
-                using var conn = new NpgsqlConnection(connectionString);
-                await conn.OpenAsync();
+                using var httpClient = new HttpClient();
 
-                string query = "INSERT INTO users (full_name, email, password) VALUES (@fullName, @email, @password)";
-                using var cmd = new NpgsqlCommand(query, conn);
+                var user = new
+                {
+                    nama,
+                    password,
+                    alamat,
+                    telepon = "123" // Dummy data for 'telepon'
+                };
 
-                // Using parameterized queries to prevent SQL injection
-                cmd.Parameters.AddWithValue("fullName", fullName);
-                cmd.Parameters.AddWithValue("email", email);
-                cmd.Parameters.AddWithValue("password", password); // For security, hash the password before storing
+                string json = JsonConvert.SerializeObject(user);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                int rowsAffected = await cmd.ExecuteNonQueryAsync();
-                return rowsAffected > 0; // True if insertion was successful
+                var response = await httpClient.PostAsync(registerEndpoint, content);
+
+                return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Database error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error connecting to registration server: {ex.Message}", "Network Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
         }

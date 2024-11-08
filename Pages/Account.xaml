@@ -25,61 +25,67 @@
     </Page.Resources>
 
     <Grid Background="#4CAF50">
-        <!-- Light green background -->
-
-        <!-- Main Container -->
         <Border Background="White" CornerRadius="20" Padding="50" VerticalAlignment="Center" HorizontalAlignment="Center" Height="678" Width="434">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                <!-- Title -->
                 <TextBlock Text="E-Cycle" FontFamily="Ubuntu" FontSize="36" FontWeight="Bold" Foreground="#333"
                            HorizontalAlignment="Center" Margin="0,5,0,20"/>
 
-                <!-- Profile Photo & Welcome Text -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-
-                    <!-- Circular Photo Placeholder -->
                     <Border BorderBrush="Gray" BorderThickness="1" Width="46" Height="48" CornerRadius="50" 
                             Background="LightGray" VerticalAlignment="Center">
                         <TextBlock Text="Change Photo" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Foreground="White"/>
                     </Border>
 
-                    <!-- Welcome Text -->
                     <StackPanel Margin="20,0,0,0">
                         <TextBlock Text="Welcome back," FontSize="20" FontWeight="Bold" Foreground="#333"/>
                         <TextBlock Text="Vincent!" FontSize="20" FontWeight="Bold" Foreground="#34A853" Margin="0,5,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
-                <!-- User Information Section (Static Text) -->
+                <!-- Current Username -->
                 <StackPanel Margin="10,0,10,0">
-                    <!-- Username -->
                     <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="300">
                         <Grid>
-                            <TextBox x:Name="txtFullname" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
-                            <TextBlock x:Name="txtUsernamePlaceholder" Text="New Username" Foreground="Gray" FontSize="14" Padding="15,10" 
-                                IsHitTestVisible="False" Visibility="Visible"/>
+                            <TextBox x:Name="txtCurrentUsername" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
+                            <TextBlock Text="New Username" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
                         </Grid>
                     </Border>
                 </StackPanel>
 
+                <!-- Current Password -->
                 <StackPanel Margin="10,0,10,0">
-                    <!-- Username -->
+                    <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="300">
+                        <Grid>
+                            <PasswordBox x:Name="txtCurrentPassword" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
+                            <TextBlock Text="New Password" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <!-- New Username -->
+                <StackPanel Margin="10,0,10,0">
+                    <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="300">
+                        <Grid>
+                            <TextBox x:Name="txtNewUsername" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
+                            <TextBlock Text="New Username" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <!-- New Password -->
+                <StackPanel Margin="10,0,10,0">
                     <Border Background="#F5F5F5" CornerRadius="20" Width="300">
                         <Grid>
-                            <TextBox x:Name="txtNewPassword" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
-                            <TextBlock x:Name="txtNewPasswordPlaceholder" Text="New Password" Foreground="Gray" FontSize="14" Padding="15,10" 
-                                IsHitTestVisible="False" Visibility="Visible"/>
+                            <PasswordBox x:Name="txtNewPassword" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
+                            <TextBlock Text="New Password" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
                         </Grid>
                     </Border>
                 </StackPanel>
 
-                <!-- Save New Profile Button -->
                 <Button Content="Save New Profile" Background="#4CAF50" Foreground="White" FontSize="16" 
                         Width="200" Height="40" HorizontalAlignment="Center" Margin="0,30,0,0" Cursor="Hand"
                         Click="SaveProfile_Click" Style="{StaticResource RoundedButtonStyle}"/>
 
-                <!-- Product List Button -->
                 <Button Content="Product List" Background="#34A853" Foreground="White" FontSize="16" 
                         Width="200" Height="40" HorizontalAlignment="Center" Margin="0,10,0,0" Cursor="Hand"
                         Click="ProductList_Click" Style="{StaticResource RoundedButtonStyle}"/>

@@ -2,15 +2,17 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Npgsql;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Ecycle
 {
     public partial class Login : Window
     {
         private bool isPasswordVisible = false;
-        private readonly string connectionString = "Host=<your_azure_host>;Port=5432;Username=<your_username>;Password=<your_password>;Database=<your_database>";
+        private readonly string authEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/auth/login";
 
         public Login()
         {
@@ -80,24 +82,25 @@ namespace Ecycle
             }
         }
 
-        private async Task<bool> VerifyCredentialsAsync(string username, string password)
+        private async Task<bool> VerifyCredentialsAsync(string username, string thispassword)
         {
             try
             {
-                using var conn = new NpgsqlConnection(connectionString);
-                await conn.OpenAsync();
+                HttpClient client = new HttpClient();
 
-                string query = "SELECT COUNT(1) FROM users WHERE username = @username AND password = @password";
-                using var cmd = new NpgsqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("username", username);
-                cmd.Parameters.AddWithValue("password", password); // Change this to a hash if passwords are stored hashed
-
-                int result = Convert.ToInt32(await cmd.ExecuteScalarAsync());
-                return result > 0; // Returns true if a matching record is found
+                var body = new
+                {
+                    nama = username,
+                    password = thispassword
+                };
+                HttpContent content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
+                var response = await client.PatchAsync("https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/auth/login", content);
+                MessageBox.Show(response.StatusCode.ToString());
+                return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error connecting to database: {ex.Message}", "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error connecting to authentication server: {ex.Message}", "Network Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
         }

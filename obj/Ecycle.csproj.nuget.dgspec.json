@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj": {}
+    "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\Ecycle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj": {
+    "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\Ecycle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj",
+        "projectUniqueName": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\Ecycle.csproj",
         "projectName": "Ecycle",
-        "projectPath": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj",
-        "packagesPath": "C:\\Users\\HP VICTUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\obj\\",
+        "projectPath": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\Ecycle.csproj",
+        "packagesPath": "C:\\Users\\Ryan\\.nuget\\packages\\",
+        "outputPath": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VisualStudio\\Microsoft VS\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HP VICTUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,17 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[8.0.5, )"
@@ -74,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
