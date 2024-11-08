@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Ecycle.Models; 
+using Ecycle.Models;
 
 namespace Ecycle.Pages
 {
@@ -16,6 +16,7 @@ namespace Ecycle.Pages
             NavigationService.GoBack();
         }
 
+        // Menampilkan detail produk
         public void LoadProductDetails(ProductModel product)
         {
             txtProductName.Text = product.Name;
@@ -23,9 +24,9 @@ namespace Ecycle.Pages
             txtProductStock.Text = $"Available stock: {product.Stock}";
             txtProductPrice.Text = $"{product.Price:C}";
             txtProductDescription.Text = product.Description;
-            txtProductShipping.Text = "Shipping from Surabaya"; // Example shipping info
-            txtProductSeller.Text = product.SellerName ?? "Unknown Seller"; // Handle null seller name
-            txtSellerLocation.Text = product.SellerLocation ?? "Location not specified"; // Handle null seller location
+            txtProductShipping.Text = "Shipping from Yogyakarta"; // Misal informasi pengiriman
+            txtProductSeller.Text = product.SellerName ?? "Unknown Seller";
+            txtSellerLocation.Text = product.SellerLocation ?? "Location not specified";
         }
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)

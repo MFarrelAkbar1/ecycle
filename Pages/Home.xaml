@@ -25,28 +25,8 @@
 
         <!-- Products Recommendation List -->
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,80,0,20">
-            <WrapPanel Orientation="Horizontal" ItemWidth="150" ItemHeight="230" HorizontalAlignment="Left">
-
-                <!-- Example Product Card with Click Event -->
-                <Button Click="ProductCard_Click" Style="{StaticResource TransparentButtonStyle}" Margin="10">
-                    <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Background="White">
-                        <StackPanel>
-                            <!-- Placeholder for Product Image (Picture Box) -->
-                            <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                            </Border>
-
-                            <!-- Product Name Placeholder -->
-                            <TextBlock Text="Product Name" FontWeight="Bold" FontSize="14" Foreground="#333" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-
-                            <!-- Product Price Placeholder -->
-                            <TextBlock Text="Price" FontWeight="Bold" FontSize="12" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        </StackPanel>
-                    </Border>
-                </Button>
-
-                <!-- Repeat more product cards as needed -->
-
+            <WrapPanel x:Name="ProductWrapPanel" Orientation="Horizontal" ItemWidth="150" ItemHeight="230" HorizontalAlignment="Left">
+                <!-- Product items will be added here dynamically -->
             </WrapPanel>
         </ScrollViewer>
     </Grid>
