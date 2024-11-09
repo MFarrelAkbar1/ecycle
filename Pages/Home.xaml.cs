@@ -75,6 +75,17 @@ namespace Ecycle.Pages
 
                 var stackPanel = new StackPanel();
 
+                // Placeholder for Image (Gray Color Block)
+                var imagePlaceholder = new Border
+                {
+                    Background = Brushes.Gray,
+                    Width = 100,
+                    Height = 100,
+                    CornerRadius = new CornerRadius(10),
+                    Margin = new Thickness(0, 0, 0, 10)
+                };
+                stackPanel.Children.Add(imagePlaceholder);
+
                 // Add product name and price if available
                 if (!string.IsNullOrEmpty(product.Nama))
                 {
@@ -102,7 +113,7 @@ namespace Ecycle.Pages
 
                 border.Child = stackPanel;
                 button.Content = border;
-                ProductWrapPanel.Children.Add(button);
+                ProductWrapPanel.Children.Add(button);  
             }
         }
 
