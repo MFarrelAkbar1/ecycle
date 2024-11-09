@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Ecycle.Models;
-using Npgsql;
+using Newtonsoft.Json;
 
 namespace Ecycle.Pages
 {
     public partial class Home : Page
     {
-        private readonly string connectionString = "Host=<your_azure_host>;Port=5432;Username=<your_username>;Password=<your_password>;Database=<your_database>";
+        private static readonly HttpClient client = new HttpClient();
 
         public Home()
         {
@@ -24,42 +25,29 @@ namespace Ecycle.Pages
             await LoadProductsAsync();
         }
 
-        // Metode untuk mengambil data produk dari database Azure
-        private async Task<List<ProductModel>> GetProductsAsync()
+        // Method to fetch product data from the Azure endpoint
+        private async Task<List<HomeModel>> GetProductsAsync()
         {
-            var products = new List<ProductModel>();
+            var products = new List<HomeModel>();
+
             try
             {
-                using var conn = new NpgsqlConnection(connectionString);
-                await conn.OpenAsync();
+                var response = await client.GetAsync("https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product");
+                response.EnsureSuccessStatusCode();
+                var responseBody = await response.Content.ReadAsStringAsync();
 
-                string query = "SELECT product_id, name, description, price, stock, sold, seller_name, seller_location FROM products";
-                using var cmd = new NpgsqlCommand(query, conn);
-
-                using var reader = await cmd.ExecuteReaderAsync();
-                while (await reader.ReadAsync())
-                {
-                    products.Add(new ProductModel
-                    {
-                        ProductId = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        Description = reader.GetString(2),
-                        Price = reader.GetDecimal(3),
-                        Stock = reader.GetInt32(4),
-                        Sold = reader.GetInt32(5),
-                        SellerName = reader.IsDBNull(6) ? null : reader.GetString(6),
-                        SellerLocation = reader.IsDBNull(7) ? null : reader.GetString(7)
-                    });
-                }
+                // Deserialize JSON response into a list of ProductModel objects
+                products = JsonConvert.DeserializeObject<List<HomeModel>>(responseBody);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading products: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
             return products;
         }
 
-        // Menampilkan produk di UI
+        // Method to display product data dynamically in the UI
         private async Task LoadProductsAsync()
         {
             var products = await GetProductsAsync();
@@ -67,7 +55,7 @@ namespace Ecycle.Pages
 
             foreach (var product in products)
             {
-                // Membuat Button untuk produk
+                // Create a Button for each product
                 var button = new Button
                 {
                     Style = (Style)FindResource("TransparentButtonStyle"),
@@ -75,7 +63,7 @@ namespace Ecycle.Pages
                 };
                 button.Click += (s, e) => ProductCard_Click(product);
 
-                // Border untuk menampung detail produk
+                // Create a Border to hold product details
                 var border = new Border
                 {
                     BorderBrush = Brushes.Gray,
@@ -87,9 +75,30 @@ namespace Ecycle.Pages
 
                 var stackPanel = new StackPanel();
 
-                // Menampilkan nama dan harga produk
-                stackPanel.Children.Add(new TextBlock { Text = product.Name, FontWeight = FontWeights.Bold, FontSize = 14, Foreground = Brushes.Black, HorizontalAlignment = HorizontalAlignment.Center });
-                stackPanel.Children.Add(new TextBlock { Text = $"{product.Price:C}", FontWeight = FontWeights.Bold, FontSize = 12, Foreground = Brushes.Green, HorizontalAlignment = HorizontalAlignment.Center });
+                // Add product name and price if available
+                if (!string.IsNullOrEmpty(product.Nama))
+                {
+                    stackPanel.Children.Add(new TextBlock
+                    {
+                        Text = product.Nama,
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 14,
+                        Foreground = Brushes.Black,
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    });
+                }
+
+                if (!string.IsNullOrEmpty(product.Harga))
+                {
+                    stackPanel.Children.Add(new TextBlock
+                    {
+                        Text = $"{product.Harga}",
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 12,
+                        Foreground = Brushes.Green,
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    });
+                }
 
                 border.Child = stackPanel;
                 button.Content = border;
@@ -97,11 +106,11 @@ namespace Ecycle.Pages
             }
         }
 
-        // Menangani navigasi ke halaman Product dengan mengirim data produk
-        private void ProductCard_Click(ProductModel product)
+        // Navigate to Product page with selected product data
+        private void ProductCard_Click(HomeModel product)
         {
             var productPage = new Product();
-            productPage.LoadProductDetails(product);
+            //productPage.LoadProductDetails(product);
             NavigationService.Navigate(productPage);
         }
     }
