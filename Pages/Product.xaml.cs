@@ -79,9 +79,5 @@ namespace Ecycle.Pages
             NavigationService.GoBack();
         }
 
-        private void BuyNow_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Proceeding to checkout...", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
     }
 }

@@ -48,11 +48,10 @@
                         <Button Content="+" Width="30" Height="30" Click="IncreaseQuantity_Click" />
                     </StackPanel>
 
-                    <!-- Action Buttons -->
+                    <!-- Add to Cart Button -->
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                         <Button Content="Add to Cart" Width="150" Height="40" Background="#34A853" Foreground="White" 
                                 Margin="0,0,10,0" Click="AddToCart_Click" />
-                        <Button Content="Buy Now" Width="100" Height="40" Background="#2E7D32" Foreground="White" Click="BuyNow_Click" />
                     </StackPanel>
                 </StackPanel>
             </Grid>
