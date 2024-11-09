@@ -1,75 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Ecycle.Models;
-using Npgsql;
 
 namespace Ecycle.Pages
 {
     public partial class Cart : Page
     {
-        // Gantilah string koneksi ini dengan informasi koneksi Azure PostgreSQL Anda.
-        private readonly string connectionString = "Host=<your_azure_host>;Port=5432;Username=<your_username>;Password=<your_password>;Database=<your_database>";
-
         public Cart()
         {
             InitializeComponent();
-            Loaded += Page_Loaded; // Memanggil metode LoadCartItems saat halaman dimuat
+            Loaded += Page_Loaded;
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            await LoadCartItems();
+            LoadCartItems();
+            DisplayTotalPrice();
         }
 
-        // Metode untuk mengambil item cart dari database Azure
-        private async Task<List<CartItemModel>> GetCartItemsAsync(int userId)
+        private void LoadCartItems()
         {
-            var cartItems = new List<CartItemModel>();
-            try
+            CartItemsPanel.Children.Clear();
+
+            foreach (var item in CartStorage.Items)
             {
-                using var conn = new NpgsqlConnection(connectionString);
-                await conn.OpenAsync();
-
-                // Query untuk mengambil item cart berdasarkan user ID
-                string query = "SELECT cart_item_id, product_id, product_name, quantity, unit_price FROM cart_items WHERE user_id = @userId";
-                using var cmd = new NpgsqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("userId", userId);
-
-                using var reader = await cmd.ExecuteReaderAsync();
-                while (await reader.ReadAsync())
-                {
-                    cartItems.Add(new CartItemModel
-                    {
-                        CartItemId = reader.GetInt32(0),
-                        ProductId = reader.GetInt32(1),
-                        ProductName = reader.GetString(2),
-                        Quantity = reader.GetInt32(3),
-                        UnitPrice = reader.GetDecimal(4)
-                    });
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading cart items: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            return cartItems;
-        }
-
-        // Memuat item cart ke dalam StackPanel di Cart.xaml
-        private async Task LoadCartItems()
-        {
-            int userId = 1; // Gantilah dengan ID pengguna yang sesuai
-            var cartItems = await GetCartItemsAsync(userId);
-
-            CartItemsPanel.Children.Clear(); // Mengosongkan konten sebelumnya
-
-            foreach (var item in cartItems)
-            {
-                // Membuat Border untuk tiap item cart
                 var border = new Border
                 {
                     BorderBrush = Brushes.Gray,
@@ -81,24 +37,86 @@ namespace Ecycle.Pages
                 };
 
                 var grid = new Grid();
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
 
-                // Menampilkan nama dan harga produk
                 var itemName = new TextBlock { Text = item.ProductName, FontWeight = FontWeights.Bold, FontSize = 16 };
                 var itemPrice = new TextBlock { Text = $"Price: {item.UnitPrice:C}", FontWeight = FontWeights.Bold, Foreground = Brushes.Green, FontSize = 14 };
 
-                // Mengisi kolom grid dengan item
-                Grid.SetColumn(itemName, 0);
-                Grid.SetColumn(itemPrice, 1);
-                grid.Children.Add(itemName);
-                grid.Children.Add(itemPrice);
+                // Quantity Controls
+                var quantityPanel = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
+                var decreaseButton = new Button { Content = "-", Width = 20, Height = 20, Margin = new Thickness(5, 0, 5, 0) };
+                decreaseButton.Click += (s, e) => DecreaseQuantity(item);
 
-                // Menambahkan grid ke dalam border, dan border ke panel CartItemsPanel
+                var quantityText = new TextBlock { Text = item.Quantity.ToString(), Width = 30, TextAlignment = TextAlignment.Center };
+
+                var increaseButton = new Button { Content = "+", Width = 20, Height = 20, Margin = new Thickness(5, 0, 5, 0) };
+                increaseButton.Click += (s, e) => IncreaseQuantity(item);
+
+                quantityPanel.Children.Add(decreaseButton);
+                quantityPanel.Children.Add(quantityText);
+                quantityPanel.Children.Add(increaseButton);
+
+                // Smaller Delete Button
+                var deleteButton = new Button
+                {
+                    Content = "X",
+                    Background = Brushes.Red,
+                    Foreground = Brushes.White,
+                    Width = 25,  // Smaller width
+                    Height = 25, // Smaller height
+                    FontSize = 12, // Smaller font size
+                    Margin = new Thickness(5, 0, 0, 0),
+                    Padding = new Thickness(0)
+                };
+                deleteButton.Click += (s, e) => DeleteItem(item);
+
+                var itemDetailsPanel = new StackPanel();
+                itemDetailsPanel.Children.Add(itemName);
+                itemDetailsPanel.Children.Add(itemPrice);
+                itemDetailsPanel.Children.Add(quantityPanel);
+
+                grid.Children.Add(itemDetailsPanel);
+                grid.Children.Add(deleteButton);
+                Grid.SetColumn(deleteButton, 1);
+
                 border.Child = grid;
                 CartItemsPanel.Children.Add(border);
             }
+        }
+
+        private void IncreaseQuantity(CartItemModel item)
+        {
+            item.Quantity++;
+            DisplayTotalPrice();
+            LoadCartItems();
+        }
+
+        private void DecreaseQuantity(CartItemModel item)
+        {
+            if (item.Quantity > 1)
+            {
+                item.Quantity--;
+                DisplayTotalPrice();
+                LoadCartItems();
+            }
+            else
+            {
+                MessageBox.Show("Minimum quantity is 1.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void DeleteItem(CartItemModel item)
+        {
+            CartStorage.Items.Remove(item);
+            DisplayTotalPrice();
+            LoadCartItems();
+        }
+
+        private void DisplayTotalPrice()
+        {
+            decimal totalPrice = CartStorage.Items.Sum(item => item.TotalPrice);
+            TotalPriceText.Text = $"Total Price: {totalPrice:C}";
         }
     }
 }

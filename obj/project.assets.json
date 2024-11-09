@@ -480,23 +480,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ryan\\.nuget\\packages\\": {},
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\Ecycle.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj",
       "projectName": "Ecycle",
-      "projectPath": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\Ecycle.csproj",
-      "packagesPath": "C:\\Users\\Ryan\\.nuget\\packages\\",
-      "outputPath": "D:\\KAMPUS\\UGM\\Perkuliahan\\Tahun 3\\Semester 5\\Proyek Junior Teknologi Informasi\\ecycle-new\\ecycle\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\Documents\\GitHub\\ecycle\\Ecycle.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Documents\\GitHub\\ecycle\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

@@ -120,9 +120,16 @@ namespace Ecycle.Pages
         // Navigate to Product page with selected product data
         private void ProductCard_Click(HomeModel product)
         {
-            var productPage = new Product();
-            //productPage.LoadProductDetails(product);
-            NavigationService.Navigate(productPage);
+            if (int.TryParse(product.ProdukID, out int productId))
+            {
+                var productPage = new Product();
+                productPage.LoadProductDetails(productId); // Pass converted product ID
+                NavigationService.Navigate(productPage);
+            }
+            else
+            {
+                MessageBox.Show("Invalid Product ID format.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

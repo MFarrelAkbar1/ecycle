@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Net.Http;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Ecycle.Models;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Ecycle.Pages
 {
@@ -18,12 +17,6 @@ namespace Ecycle.Pages
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack(); // Navigate back to the previous page
-        }
-
-        // Load product details from Azure backend using product ID
         public async void LoadProductDetails(int productId)
         {
             try
@@ -31,15 +24,15 @@ namespace Ecycle.Pages
                 string url = $"{ApiBaseUrl}{productId}";
                 var response = await _httpClient.GetStringAsync(url);
 
-                var product = JsonConvert.DeserializeObject<ProductModel>(response);
-                if (product != null)
-                {
-                    DisplayProductDetails(product);
-                }
-                else
-                {
-                    MessageBox.Show("Product not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                var productData = JObject.Parse(response);
+
+                string produkID = productData["produkID"]?.ToString();
+                string nama = productData["nama"]?.ToString();
+                string harga = productData["harga"]?.ToString();
+
+                txtProductName.Text = nama ?? "No Name";
+                txtProductPrice.Text = $"Price: {harga ?? "0"}";
+                txtProductId.Text = produkID; // Assuming txtProductId is a hidden TextBlock for product ID
             }
             catch (Exception ex)
             {
@@ -47,22 +40,43 @@ namespace Ecycle.Pages
             }
         }
 
-        // Display the fetched product details in the UI
-        private void DisplayProductDetails(ProductModel product)
+        private void IncreaseQuantity_Click(object sender, RoutedEventArgs e)
         {
-            txtProductName.Text = product.Name;
-            txtProductSold.Text = $"Sold: {product.Sold}";
-            txtProductStock.Text = $"Available stock: {product.Stock}";
-            txtProductPrice.Text = $"{product.Price:C}";  // Format price as currency
-            txtProductDescription.Text = product.Description;
-            txtProductShipping.Text = $"Shipping cost: {product.ShippingCost:C}";  // Display shipping cost
-            txtProductSeller.Text = product.SellerName ?? "Unknown Seller";
-            txtSellerLocation.Text = product.SellerLocation ?? "Location not specified";
+            int quantity = int.Parse(txtQuantity.Text);
+            txtQuantity.Text = (++quantity).ToString();
+        }
+
+        private void DecreaseQuantity_Click(object sender, RoutedEventArgs e)
+        {
+            int quantity = int.Parse(txtQuantity.Text);
+            if (quantity > 1)
+            {
+                txtQuantity.Text = (--quantity).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Minimum quantity is 1.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
+            int quantity = int.Parse(txtQuantity.Text);
+
+            CartStorage.Items.Add(new CartItemModel
+            {
+                ProductId = int.Parse(txtProductId.Text), // Assuming txtProductId is the hidden product ID field
+                ProductName = txtProductName.Text,
+                Quantity = quantity,
+                UnitPrice = decimal.Parse(txtProductPrice.Text.Replace("Price: ", ""))
+            });
+
             MessageBox.Show("Product added to cart!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
 
         private void BuyNow_Click(object sender, RoutedEventArgs e)
