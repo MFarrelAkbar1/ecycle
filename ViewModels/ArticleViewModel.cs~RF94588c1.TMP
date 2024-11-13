@@ -1,0 +1,71 @@
+﻿using Ecycle.Models;
+using Ecycle.Pages;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Net.Http;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+
+namespace Ecycle.ViewModels
+{
+    class ArticleViewModel
+    {
+        public ObservableCollection<ArticleModel> Articles { get; private set; } = new();
+        public ICommand OpenLinkCommand { get; }
+
+        public ArticleViewModel()
+        {
+            _ = FetchArticles();
+            OpenLinkCommand = new RelayCommand<string>(OpenLink, null);
+        }
+
+        private async Task FetchArticles()
+        {
+            //for (int i = 1; i <= 20; i++)
+            //{
+            //    Articles.Add(new ArticleModel
+            //    {
+            //        ArtikelID = 1,
+            //        Judul = "Title " + i,
+            //        Deskripsi = "",
+            //        Konten = "https://9gag.com",
+            //        PublishedDate = DateTime.Now,
+            //    });
+            //}
+
+            using HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync("https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/article");
+
+            response.EnsureSuccessStatusCode();
+            string? content = await response.Content.ReadAsStringAsync();
+            if (content != null)
+            {
+                List<ArticleModel> list = JsonConvert.DeserializeObject<List<ArticleModel>>(content) ?? new();
+                Articles = new ObservableCollection<ArticleModel>(list);
+                Articles.Add(null);
+                Articles.Remove(null);
+            }
+        }
+
+        private void OpenLink(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                if (!url.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+                    !url.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                {
+                    url = "http://" + url;
+                }
+
+                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+            }
+        }
+    }
+}

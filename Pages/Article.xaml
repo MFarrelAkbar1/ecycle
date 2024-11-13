@@ -15,140 +15,32 @@
 
         <!-- Main Border and Container -->
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,80,0,20">
-            <WrapPanel Orientation="Horizontal" ItemWidth="150" ItemHeight="230" HorizontalAlignment="Left">
-                <!-- Reduced size -->
-
-                <!-- Example Product Placeholder -->
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <!-- Placeholder for Product Image (Picture Box) -->
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-
-                        <!-- Product Name Placeholder -->
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <!-- More Picture Box Placeholders -->
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <!-- Repeat as many placeholders as needed to ensure scrolling -->
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <!-- More Picture Box Placeholders to ensure scrolling -->
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <!-- More boxes for scrolling -->
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-                        <!-- Reduced font size -->
-
-                        <!-- Product Price Placeholder -->
-                        <TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-                        <!-- Reduced font size -->
-                        <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
-                    <StackPanel>
-                        <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
-                        </Border>
-                        <TextBlock Text="Article Title" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
-<!-- Reduced font size -->
-
-<!-- Product Price Placeholder -->
-<TextBlock Text="Description" FontSize="11" Foreground="#000" HorizontalAlignment="Center" Margin="5,0,0,0"/>
-<!-- Reduced font size -->
-<TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
-                    </StackPanel>
-                </Border>
-
-                <!-- Continue adding more Picture Boxes if needed -->
-
-            </WrapPanel>
+            <ItemsControl ItemsSource="{Binding Articles}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" ItemWidth="150" ItemHeight="230" HorizontalAlignment="Left">
+                        </WrapPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding DataContext.OpenLinkCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                CommandParameter="{Binding Konten}" Background="Transparent" BorderThickness="0" Padding="0">
+                            <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Background="White">
+                                <StackPanel>
+                                    <!-- Placeholder for Product Image (Picture Box) -->
+                                    <Border BorderBrush="Gray" BorderThickness="2" Background="#f1f3f5" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock Text="Picture Box" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Gray"/>
+                                    </Border>
+                                    <!-- Title Placeholder -->
+                                    <TextBlock Text="{Binding Judul}" FontWeight="Bold" FontSize="14" Foreground="#2E7D32" HorizontalAlignment="Center" Margin="10,10,0,0"/>
+                                    <TextBlock Text="See More" FontSize="9" Foreground="#0000FF" HorizontalAlignment="Center" Margin="5,2,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </ScrollViewer>
     </Grid>
 </Page>
