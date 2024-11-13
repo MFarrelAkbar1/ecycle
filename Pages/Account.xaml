@@ -7,7 +7,6 @@
       Title="Account">
 
     <Page.Resources>
-        <!-- Rounded Rectangle Style for Buttons -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -25,71 +24,131 @@
     </Page.Resources>
 
     <Grid Background="#4CAF50">
-        <Border Background="White" CornerRadius="20" Padding="50" VerticalAlignment="Center" HorizontalAlignment="Center" Height="678" Width="434">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="E-Cycle" FontFamily="Ubuntu" FontSize="36" FontWeight="Bold" Foreground="#333"
-                           HorizontalAlignment="Center" Margin="0,5,0,20"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Border Background="White" CornerRadius="20" Padding="50" VerticalAlignment="Center" HorizontalAlignment="Center" Height="678" Width="600">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="E-Cycle" FontFamily="Ubuntu" FontSize="36" FontWeight="Bold" Foreground="#333"
+                               HorizontalAlignment="Center" Margin="0,5,0,20"/>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="46" Height="48" CornerRadius="50" 
-                            Background="LightGray" VerticalAlignment="Center">
-                        <TextBlock Text="Change Photo" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Foreground="White"/>
-                    </Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                        <Border BorderBrush="Gray" BorderThickness="1" Width="46" Height="48" CornerRadius="50" 
+                                Background="LightGray" VerticalAlignment="Center">
+                            <TextBlock Text="Change Photo" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" Foreground="White"/>
+                        </Border>
 
-                    <StackPanel Margin="20,0,0,0">
-                        <TextBlock Text="Welcome back," FontSize="20" FontWeight="Bold" Foreground="#333"/>
-                        <TextBlock Text="Vincent!" FontSize="20" FontWeight="Bold" Foreground="#34A853" Margin="0,5,0,0"/>
+                        <StackPanel Margin="20,0,0,0">
+                            <TextBlock Text="Welcome back," FontSize="20" FontWeight="Bold" Foreground="#333"/>
+                            <TextBlock Text="Vincent!" FontSize="20" FontWeight="Bold" Foreground="#34A853" Margin="0,5,0,0"/>
+                        </StackPanel>
                     </StackPanel>
+
+                    <Grid Margin="0,10,0,0" Width="500">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left Column -->
+                        <StackPanel Grid.Column="0" Margin="10,0,10,0">
+                            <!-- Current Username -->
+                            <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="230">
+                                <Grid>
+                                    <TextBox x:Name="txtCurrentUsername" FontSize="14" Padding="15,10" 
+                                            BorderThickness="0" Background="Transparent"
+                                            GotFocus="TextBox_GotFocus"
+                                            LostFocus="TextBox_LostFocus"/>
+                                    <TextBlock x:Name="txtCurrentUsernamePlaceholder" 
+                                            Text="Current Username" Foreground="Gray" 
+                                            FontSize="14" Padding="15,10" 
+                                            IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- Current Password -->
+                            <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="230">
+                                <Grid>
+                                    <PasswordBox x:Name="txtCurrentPassword" FontSize="14" Padding="15,10" 
+                                                BorderThickness="0" Background="Transparent"
+                                                GotFocus="PasswordBox_GotFocus"
+                                                LostFocus="PasswordBox_LostFocus"/>
+                                    <TextBlock x:Name="txtCurrentPasswordPlaceholder" 
+                                            Text="Current Password" Foreground="Gray" 
+                                            FontSize="14" Padding="15,10" 
+                                            IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- New Address -->
+                            <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="230">
+                                <Grid>
+                                    <TextBox x:Name="txtNewAlamat" FontSize="14" Padding="15,10" 
+                                            BorderThickness="0" Background="Transparent"
+                                            GotFocus="TextBox_GotFocus"
+                                            LostFocus="TextBox_LostFocus"/>
+                                    <TextBlock x:Name="txtNewAlamatPlaceholder" 
+                                            Text="New Address" Foreground="Gray" 
+                                            FontSize="14" Padding="15,10" 
+                                            IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Right Column -->
+                        <StackPanel Grid.Column="1" Margin="10,0,10,0">
+                            <!-- New Username -->
+                            <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="230">
+                                <Grid>
+                                    <TextBox x:Name="txtNewUsername" FontSize="14" Padding="15,10" 
+                                            BorderThickness="0" Background="Transparent"
+                                            GotFocus="TextBox_GotFocus"
+                                            LostFocus="TextBox_LostFocus"/>
+                                    <TextBlock x:Name="txtNewUsernamePlaceholder" 
+                                            Text="New Username" Foreground="Gray" 
+                                            FontSize="14" Padding="15,10" 
+                                            IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- New Password -->
+                            <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="230">
+                                <Grid>
+                                    <PasswordBox x:Name="txtNewPassword" FontSize="14" Padding="15,10" 
+                                                BorderThickness="0" Background="Transparent"
+                                                GotFocus="PasswordBox_GotFocus"
+                                                LostFocus="PasswordBox_LostFocus"/>
+                                    <TextBlock x:Name="txtNewPasswordPlaceholder" 
+                                            Text="New Password" Foreground="Gray" 
+                                            FontSize="14" Padding="15,10" 
+                                            IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- New Telephone -->
+                            <Border Background="#F5F5F5" CornerRadius="20" Width="230">
+                                <Grid>
+                                    <TextBox x:Name="txtNewTelepon" FontSize="14" Padding="15,10" 
+                                            BorderThickness="0" Background="Transparent"
+                                            GotFocus="TextBox_GotFocus"
+                                            LostFocus="TextBox_LostFocus"/>
+                                    <TextBlock x:Name="txtNewTeleponPlaceholder" 
+                                            Text="New Telephone" Foreground="Gray" 
+                                            FontSize="14" Padding="15,10" 
+                                            IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Action Buttons -->
+                    <Button Content="Save New Profile" Background="#4CAF50" Foreground="White" FontSize="16" 
+                            Width="200" Height="40" HorizontalAlignment="Center" Margin="0,30,0,0" Cursor="Hand"
+                            Click="SaveProfile_Click" Style="{StaticResource RoundedButtonStyle}"/>
+
+                    <Button Content="Product List" Background="#34A853" Foreground="White" FontSize="16" 
+                            Width="200" Height="40" HorizontalAlignment="Center" Margin="0,10,0,0" Cursor="Hand"
+                            Click="ProductList_Click" Style="{StaticResource RoundedButtonStyle}"/>
                 </StackPanel>
-
-                <!-- Current Username -->
-                <StackPanel Margin="10,0,10,0">
-                    <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="300">
-                        <Grid>
-                            <TextBox x:Name="txtCurrentUsername" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
-                            <TextBlock Text="New Username" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-
-                <!-- Current Password -->
-                <StackPanel Margin="10,0,10,0">
-                    <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="300">
-                        <Grid>
-                            <PasswordBox x:Name="txtCurrentPassword" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
-                            <TextBlock Text="New Password" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-
-                <!-- New Username -->
-                <StackPanel Margin="10,0,10,0">
-                    <Border Background="#F5F5F5" CornerRadius="20" Margin="0,0,0,10" Width="300">
-                        <Grid>
-                            <TextBox x:Name="txtNewUsername" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
-                            <TextBlock Text="New Username" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-
-                <!-- New Password -->
-                <StackPanel Margin="10,0,10,0">
-                    <Border Background="#F5F5F5" CornerRadius="20" Width="300">
-                        <Grid>
-                            <PasswordBox x:Name="txtNewPassword" FontSize="14" Padding="15,10" BorderThickness="0" Background="Transparent"/>
-                            <TextBlock Text="New Password" Foreground="Gray" FontSize="14" Padding="15,10" IsHitTestVisible="False"/>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-
-                <Button Content="Save New Profile" Background="#4CAF50" Foreground="White" FontSize="16" 
-                        Width="200" Height="40" HorizontalAlignment="Center" Margin="0,30,0,0" Cursor="Hand"
-                        Click="SaveProfile_Click" Style="{StaticResource RoundedButtonStyle}"/>
-
-                <Button Content="Product List" Background="#34A853" Foreground="White" FontSize="16" 
-                        Width="200" Height="40" HorizontalAlignment="Center" Margin="0,10,0,0" Cursor="Hand"
-                        Click="ProductList_Click" Style="{StaticResource RoundedButtonStyle}"/>
-            </StackPanel>
-        </Border>
+            </Border>
+        </ScrollViewer>
     </Grid>
 </Page>

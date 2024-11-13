@@ -1,32 +1,72 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\ecycle\\",
+  "WorkspaceRootPath": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|d:\\projects\\ecycle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\userproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\userproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\userproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\userproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\models\\userproductmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:models\\userproductmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\account.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\account.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\account.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\account.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\article.xaml~rf92146f4.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\article.xaml~rf92146f4.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\article.xaml~rf90813e8.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\article.xaml~rf90813e8.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\article.xaml.cs~rf90e49cf.tmp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\article.xaml.cs~rf90e49cf.tmp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|d:\\projects\\ecycle\\viewmodels\\articleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\viewmodels\\articleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:viewmodels\\articleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|d:\\projects\\ecycle\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|d:\\projects\\ecycle\\models\\articlemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\models\\articlemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:models\\articlemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|d:\\projects\\ecycle\\pages\\article.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\article.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\article.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|d:\\projects\\ecycle\\pages\\article.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|c:\\users\\hp victus\\documents\\github\\ecycle\\pages\\article.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD1C4278-5289-438F-84B3-353C24DA004D}|Ecycle.csproj|solutionrelative:pages\\article.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -37,34 +77,158 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserProductModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Models\\UserProductModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserProductModel.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Models\\UserProductModel.cs",
+              "RelativeToolTip": "Models\\UserProductModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T06:33:38.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Models\\AccountModel.cs",
+              "RelativeDocumentMoniker": "Models\\AccountModel.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Models\\AccountModel.cs",
+              "RelativeToolTip": "Models\\AccountModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T06:27:55.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.xaml",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Product.xaml",
+              "RelativeDocumentMoniker": "Pages\\Product.xaml",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Product.xaml",
+              "RelativeToolTip": "Pages\\Product.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-13T06:24:07.166Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AgIAAPkAAAAAAAAAAADwvwkBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-11-13T05:03:39.623Z",
+              "Title": "UserProduct.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\UserProduct.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\UserProduct.xaml.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\UserProduct.xaml.cs",
+              "RelativeToolTip": "Pages\\UserProduct.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAACLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T06:19:51.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserProduct.xaml",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\UserProduct.xaml",
+              "RelativeDocumentMoniker": "Pages\\UserProduct.xaml",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\UserProduct.xaml",
+              "RelativeToolTip": "Pages\\UserProduct.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-13T06:12:29.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Account.xaml",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Account.xaml",
+              "RelativeDocumentMoniker": "Pages\\Account.xaml",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Account.xaml",
+              "RelativeToolTip": "Pages\\Account.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-13T06:10:24.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Account.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Account.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Account.xaml.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Account.xaml.cs",
+              "RelativeToolTip": "Pages\\Account.xaml.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAUwIoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T06:11:39.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Article.xaml~RF92146f4.TMP",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml~RF92146f4.TMP",
+              "RelativeDocumentMoniker": "Pages\\Article.xaml~RF92146f4.TMP",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml~RF92146f4.TMP",
+              "RelativeToolTip": "Pages\\Article.xaml~RF92146f4.TMP",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-13T06:12:23.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Article.xaml~RF90813e8.TMP",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml~RF90813e8.TMP",
+              "RelativeDocumentMoniker": "Pages\\Article.xaml~RF90813e8.TMP",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml~RF90813e8.TMP",
+              "RelativeToolTip": "Pages\\Article.xaml~RF90813e8.TMP",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-13T06:12:18.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Article.xaml.cs~RF90e49cf.TMP",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml.cs~RF90e49cf.TMP",
+              "RelativeDocumentMoniker": "Pages\\Article.xaml.cs~RF90e49cf.TMP",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml.cs~RF90e49cf.TMP",
+              "RelativeToolTip": "Pages\\Article.xaml.cs~RF90e49cf.TMP",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-13T06:12:09.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAPkAAAAAAAAAAADwvwkBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-11-13T05:03:39.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "RelayCommand.cs",
-              "DocumentMoniker": "D:\\Projects\\ecycle\\Commands\\RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Commands\\RelayCommand.cs",
               "RelativeDocumentMoniker": "Commands\\RelayCommand.cs",
-              "ToolTip": "D:\\Projects\\ecycle\\Commands\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Commands\\RelayCommand.cs",
               "RelativeToolTip": "Commands\\RelayCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -72,24 +236,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "ArticleViewModel.cs",
-              "DocumentMoniker": "D:\\Projects\\ecycle\\ViewModels\\ArticleViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\ViewModels\\ArticleViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ArticleViewModel.cs",
-              "ToolTip": "D:\\Projects\\ecycle\\ViewModels\\ArticleViewModel.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\ViewModels\\ArticleViewModel.cs",
               "RelativeToolTip": "ViewModels\\ArticleViewModel.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAADwvyQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T03:45:43.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T03:45:43.218Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "ArticleModel.cs",
-              "DocumentMoniker": "D:\\Projects\\ecycle\\Models\\ArticleModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Models\\ArticleModel.cs",
               "RelativeDocumentMoniker": "Models\\ArticleModel.cs",
-              "ToolTip": "D:\\Projects\\ecycle\\Models\\ArticleModel.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Models\\ArticleModel.cs",
               "RelativeToolTip": "Models\\ArticleModel.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAEwBMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -97,11 +260,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Projects\\ecycle\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\Projects\\ecycle\\App.xaml",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-11-13T03:19:37.065Z",
@@ -109,11 +272,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "Article.xaml.cs",
-              "DocumentMoniker": "D:\\Projects\\ecycle\\Pages\\Article.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\Article.xaml.cs",
-              "ToolTip": "D:\\Projects\\ecycle\\Pages\\Article.xaml.cs",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml.cs",
               "RelativeToolTip": "Pages\\Article.xaml.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAcwBkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -121,14 +284,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "Article.xaml",
-              "DocumentMoniker": "D:\\Projects\\ecycle\\Pages\\Article.xaml",
+              "DocumentMoniker": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml",
               "RelativeDocumentMoniker": "Pages\\Article.xaml",
-              "ToolTip": "D:\\Projects\\ecycle\\Pages\\Article.xaml",
+              "ToolTip": "C:\\Users\\HP VICTUS\\Documents\\GitHub\\ecycle\\Pages\\Article.xaml",
               "RelativeToolTip": "Pages\\Article.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-18T23:23:25.872Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             }
           ]
         },
