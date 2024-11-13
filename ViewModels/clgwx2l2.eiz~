@@ -1,0 +1,39 @@
+﻿using Ecycle.Models;
+using Ecycle.Pages;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace Ecycle.ViewModels
+{
+    class ArticleViewModel
+    {
+        public ObservableCollection<ArticleModel> Articles { get; private set; } = new();
+
+        public ArticleViewModel()
+        {
+            _ = FetchArticles();
+        }
+
+        private async Task FetchArticles()
+        {
+            await Task.Delay(1000);
+            for (int i = 1; i <= 20; i++)
+            {
+                Articles.Add(new ArticleModel
+                {
+                    ArticleId = 1,
+                    Title = "Title " + i,
+                    Description = "",
+                    Content = "Content " + i + " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at accumsan tortor. Pellentesque at tristique arcu. Fusce vel nunc eget elit posuere dignissim. Integer vehicula sapien pellentesque lacinia suscipit. Morbi vehicula augue non feugiat aliquam. In maximus metus vel laoreet vehicula. Nulla ut justo vitae mi porta vulputate.\r\n\r\nNunc convallis, velit vitae varius sagittis, felis mi gravida magna, eu imperdiet dolor ligula vel mauris. Maecenas gravida gravida hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum efficitur, nisi id pretium ultrices, quam odio pretium sapien, lacinia tempus tellus nisl vel justo. Ut sollicitudin ut velit eget egestas. Donec quis accumsan enim. Proin vulputate eros nec elit luctus aliquam. Donec ullamcorper felis quis lorem ullamcorper lobortis. Morbi ut odio elit. Cras auctor vestibulum accumsan. Sed egestas velit lectus, nec ultrices massa viverra nec. Suspendisse congue, metus ut porta efficitur, nulla diam egestas libero, et rhoncus metus risus a enim. Duis aliquam dictum quam, nec suscipit risus consectetur in.\r\n\r\nCras dapibus, lacus eu efficitur posuere, sem sem placerat orci, ac facilisis ipsum urna quis leo. Quisque augue odio, hendrerit a enim eget, porta scelerisque elit. Cras turpis nisl, gravida et efficitur eget, placerat a quam. Sed malesuada auctor mi ut consectetur. Donec sed augue at nibh sollicitudin porttitor at eu nisl. Aliquam sodales velit est, eget rutrum urna aliquam non. Phasellus non molestie risus, eu ullamcorper velit. Nullam sagittis libero eget pellentesque auctor. Donec ac feugiat justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;\r\n\r\nEtiam malesuada cursus eros. Sed aliquet eleifend justo at maximus. In porttitor luctus dui a imperdiet. In ut mollis nulla. Sed sed quam vehicula, gravida enim vitae, consequat mauris. Maecenas vel lorem arcu. Nulla facilisi. Praesent feugiat dictum risus in efficitur. Sed volutpat consectetur justo, ac elementum dui porta in.\r\n\r\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed semper sed tortor vel dapibus. Fusce mollis facilisis elit in maximus. Praesent sit amet lacinia diam, vel elementum justo. Morbi lobortis nisl et nulla fermentum tempus. Nullam sodales urna quis elit posuere, eget finibus elit dignissim. Nulla suscipit, quam ac tincidunt facilisis, arcu ligula convallis nibh, ac pharetra tellus dui quis neque. Nullam non enim rutrum, laoreet tortor at, dignissim nunc. Sed suscipit vitae lectus at pretium. Aenean quis tempor ligula. Pellentesque viverra imperdiet enim. Donec feugiat augue ipsum, id euismod dolor hendrerit eu. Nunc placerat tristique pellentesque.\r\n\r\n",
+                    PublishedDate = DateTime.Now,
+                });
+            }
+            MessageBox.Show(Articles.Count.ToString());
+        }
+    }
+}

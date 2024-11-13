@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\HP VICTUS\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\HP VICTUS\\.nuget\\packages",
-      "D:\\VisualStudio\\Microsoft VS\\Shared\\NuGetPackages"
+      "C:\\Users\\HP\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\HP\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

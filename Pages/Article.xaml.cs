@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Ecycle.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Ecycle.ViewModels;
 
 namespace Ecycle.Pages
 {
@@ -23,6 +27,8 @@ namespace Ecycle.Pages
         public Article()
         {
             InitializeComponent();
+
+            DataContext = new ArticleViewModel();
         }
     }
 }
