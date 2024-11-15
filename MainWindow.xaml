@@ -15,12 +15,12 @@
         <Image Source="Resource\EcycleLogo.png" 
                Height="51" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Margin="0,10,0,0"/>
         <ListBox Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" x:Name="sidebar" Margin="0,60,0,50" BorderThickness="0" Background="#EAF7EA">
-            <local:NavButton Navlink="/Pages/Home.xaml" Margin="3" Padding="6" Icon="M10,30 L10,20 L20,10 L30,20 L30,30 L25,30 L25,25 L15,25 L15,30 z M12,30 L12,25 L23,25 L23,30 z"/>
+            <local:NavButton Navlink="/Pages/Home.xaml" Margin="3" Padding="1" Icon="M10,30 L10,20 L20,10 L30,20 L30,30 L25,30 L25,25 L15,25 L15,30 z M12,30 L12,25 L23,25 L23,30 z"/>
             <local:NavButton Navlink="/Pages/Cart.xaml" Margin="3" Padding="6" Icon="M6,6 L6,8 L7,8 L10,15 L17,15 L21,8 L8,8 M7,16 A2,2 0 1 0 7,20 A2,2 0 1 0 7,16 M15,16 A2,2 0 1 0 15,20 A2,2 0 1 0 15,16 M6,2 L2,2 L2,4 L5,4 L10,12 L19,12 L23,4 L8,4"/>
             <local:NavButton Navlink="/Pages/Article.xaml" Margin="3" Padding="6" Icon="M6,2 L14,2 L18,6 L18,18 L6,18 z M14,2 L14,6 L18,6 M8,8 L16,8 M8,10 L16,10 M8,12 L12,12"/>
             <local:NavButton Navlink="/Pages/Account.xaml" Margin="3" Padding="6" Icon="M12,2 C9.79,2 8,3.79 8,6 C8,8.21 9.79,10 12,10 C14.21,10 16,8.21 16,6 C16,3.79 14.21,2 12,2 z M6,18 C6,15.33 9.33,14 12,14 C14.67,14 18,15.33 18,18 L18,20 L6,20 L6,18 z"/>
         </ListBox>
-       
+
         <Frame Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="LightGreen" />
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
         <StackPanel x:Name="welcomePanel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">

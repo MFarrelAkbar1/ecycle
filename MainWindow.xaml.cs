@@ -19,5 +19,15 @@ namespace Ecycle
                 welcomePanel.Visibility = Visibility.Collapsed;
             }
         }
+
+        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
+
+        private void MainFrame_Navigated_1(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }
