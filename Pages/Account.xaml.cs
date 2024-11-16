@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json;
+using Ecycle.Models; // Import UserSession
 
 namespace Ecycle.Pages
 {
@@ -15,9 +16,12 @@ namespace Ecycle.Pages
         public Account()
         {
             InitializeComponent();
+
+            // Tampilkan username yang telah login
+            txtUserName.Text = UserSession.Username ?? "Guest"; // Default jika username kosong
         }
 
-        // Event handler for TextBox GotFocus (focus gained)
+        // Event handler for TextBox GotFocus
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -29,7 +33,7 @@ namespace Ecycle.Pages
             }
         }
 
-        // Event handler for TextBox LostFocus (focus lost)
+        // Event handler for TextBox LostFocus
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -72,7 +76,6 @@ namespace Ecycle.Pages
             return this.FindName(placeholderName) as TextBlock;
         }
 
-        // Event handler for the SaveProfile button click
         private async void SaveProfile_Click(object sender, RoutedEventArgs e)
         {
             string currentUsername_ = txtCurrentUsername.Text;
@@ -82,7 +85,6 @@ namespace Ecycle.Pages
             string newAlamat_ = txtNewAlamat.Text;
             string newTelepon_ = txtNewTelepon.Text;
 
-            // Check if required fields are filled
             if (string.IsNullOrWhiteSpace(currentUsername_) || string.IsNullOrWhiteSpace(currentPassword_) ||
                 string.IsNullOrWhiteSpace(newUsername_) || string.IsNullOrWhiteSpace(newPassword_))
             {
@@ -90,7 +92,6 @@ namespace Ecycle.Pages
                 return;
             }
 
-            // Call API to update profile
             bool isUpdated = await UpdateUserProfileAsync(currentUsername_, currentPassword_, newUsername_, newPassword_, newAlamat_, newTelepon_);
             if (isUpdated)
             {
@@ -102,7 +103,6 @@ namespace Ecycle.Pages
             }
         }
 
-        // Async method to send updated profile data to the server
         private async Task<bool> UpdateUserProfileAsync(string currentUsername_, string currentPassword_, string newUsername_, string newPassword_, string newAlamat_, string newTelepon_)
         {
             try
@@ -130,10 +130,24 @@ namespace Ecycle.Pages
             }
         }
 
-        // Event handler for the ProductList button click
         private void ProductList_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new UserProduct());
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            // Hapus sesi pengguna
+            UserSession.Username = null;
+            UserSession.Password = null;
+
+            // Tampilkan pesan logout
+            MessageBox.Show("You have been logged out.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            // Navigasi ke halaman login
+            Login loginWindow = new Login();
+            loginWindow.Show();
+            Window.GetWindow(this)?.Close();
         }
     }
 }

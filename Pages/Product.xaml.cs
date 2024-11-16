@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 using Ecycle.Models;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Ecycle.Pages
 {
@@ -24,15 +24,24 @@ namespace Ecycle.Pages
                 string url = $"{ApiBaseUrl}{productId}";
                 var response = await _httpClient.GetStringAsync(url);
 
-                var productData = JObject.Parse(response);
+                // Deserialize JSON response into ProductModel
+                var product = JsonConvert.DeserializeObject<ProductModel>(response);
 
-                string produkID = productData["produkID"]?.ToString();
-                string nama = productData["nama"]?.ToString();
-                string harga = productData["harga"]?.ToString();
-
-                txtProductName.Text = nama ?? "No Name";
-                txtProductPrice.Text = $"Price: {harga ?? "0"}";
-                txtProductId.Text = produkID; // Assuming txtProductId is a hidden TextBlock for product ID
+                if (product != null)
+                {
+                    // Assign data to UI elements
+                    txtProductId.Text = product.ProdukID.ToString();
+                    txtProductName.Text = product.Name ?? "No Name";
+                    txtProductPrice.Text = $"Price: Rp{product.Price:N}";
+                    txtProductDescription.Text = product.Description ?? "No Description";
+                    txtProductStock.Text = $"Stock: {product.Stock}";
+                    txtProductSold.Text = $"Sold: {product.Sold}";
+                    txtProductShipping.Text = $"Shipping Cost: Rp{product.ShippingCost:N}";
+                }
+                else
+                {
+                    MessageBox.Show("Product not found or response is null.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -65,10 +74,10 @@ namespace Ecycle.Pages
 
             CartStorage.Items.Add(new CartItemModel
             {
-                ProductId = int.Parse(txtProductId.Text), // Assuming txtProductId is the hidden product ID field
+                ProductId = int.Parse(txtProductId.Text),
                 ProductName = txtProductName.Text,
                 Quantity = quantity,
-                UnitPrice = decimal.Parse(txtProductPrice.Text.Replace("Price: ", ""))
+                UnitPrice = decimal.Parse(txtProductPrice.Text.Replace("Price: ", "").Replace("$", ""))
             });
 
             MessageBox.Show("Product added to cart!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -78,6 +87,5 @@ namespace Ecycle.Pages
         {
             NavigationService.GoBack();
         }
-
     }
 }

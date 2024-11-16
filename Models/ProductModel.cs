@@ -1,19 +1,20 @@
-﻿using System;
-
-namespace Ecycle.Models
+﻿using Newtonsoft.Json;
+using System;
+public class ProductModel
 {
-    public class ProductModel
-    {
-        public int ProdukID { get; set; }         // produkID
-        public string Name { get; set; }           // nama
-        public string Description { get; set; }    // deskripsi
-        public int Stock { get; set; }             // stok
-        public int Sold { get; set; }              // terjual
-        public decimal Price { get; set; }         // harga
-        public int ShippingCost { get; set; }      // ongkosKirim
-        public int CategoryId { get; set; }        // kategoriID
-        public string SellerName { get; set; }     // namaPenjual
-        public string SellerLocation { get; set; } // alamat
-        public int MaterialId { get; set; }      // bahanID
-    }
+    [JsonProperty("produkID")]
+    public int ProdukID { get; set; }
+    [JsonProperty("nama")]
+    public string Name { get; set; }
+    [JsonProperty("deskripsi")]
+    public string Description { get; set; }
+    [JsonProperty("stok")]
+    public int Stock { get; set; }
+    [JsonProperty("terjual")]
+    public int Sold { get; set; }
+    [JsonProperty("harga")]
+    public decimal Price { get; set; }
+    [JsonProperty("ongkosKirim")]
+    public int ShippingCost { get; set; }
 }
+

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Ecycle.Models; // Tambahkan namespace untuk UserSession
 
 namespace Ecycle
 {
@@ -72,6 +73,11 @@ namespace Ecycle
 
             if (isAuthenticated)
             {
+                // Simpan username dan password ke UserSession setelah login berhasil
+                UserSession.Username = enteredUsername;
+                UserSession.Password = enteredPassword;
+
+                // Navigasi ke halaman utama
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
@@ -82,20 +88,26 @@ namespace Ecycle
             }
         }
 
-        private async Task<bool> VerifyCredentialsAsync(string username, string thispassword)
+        private async Task<bool> VerifyCredentialsAsync(string username, string password)
         {
             try
             {
-                HttpClient client = new HttpClient();
+                using HttpClient client = new HttpClient();
 
                 var body = new
                 {
                     nama = username,
-                    password = thispassword
+                    password = password
                 };
                 HttpContent content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
-                var response = await client.PatchAsync("https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/auth/login", content);
-                MessageBox.Show(response.StatusCode.ToString());
+                var response = await client.PatchAsync(authEndpoint, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    string errorMessage = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Login failed: {errorMessage}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)

@@ -301,6 +301,7 @@ D:\Projects\ecycle\obj\Debug\net6.0-windows\Ecycle.pdb
 D:\Projects\ecycle\obj\Debug\net6.0-windows\Ecycle.genruntimeconfig.cache
 D:\Projects\ecycle\obj\Debug\net6.0-windows\ref\Ecycle.dll
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.csproj.AssemblyReference.cache
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Account.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Cart.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Product.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\UserProduct.baml
@@ -334,7 +335,6 @@ C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\runtimes\bro
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\App.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Login.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Account.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Article.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Home.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Themes\Generic.baml
