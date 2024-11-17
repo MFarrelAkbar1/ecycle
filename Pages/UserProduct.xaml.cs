@@ -12,7 +12,7 @@ namespace Ecycle.Pages
 {
     public partial class UserProduct : Page
     {
-        private readonly string userProductsEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product/user/{0}";
+        private readonly string userProductsEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product/user/";
         private readonly string createProductEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product/post";
         private readonly string updateProductEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product/update";
         private readonly string deleteProductEndpoint = "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product/delete";
@@ -31,16 +31,27 @@ namespace Ecycle.Pages
             try
             {
                 using var httpClient = new HttpClient();
-                var userId = 1; // Ganti dengan ID pengguna yang sesuai
-                var response = await httpClient.GetStringAsync(string.Format(userProductsEndpoint, userId));
+                var userId = UserSession.PenggunaID; // Ensure the ID is not null or empty
+                var url = $"{userProductsEndpoint}{UserSession.PenggunaID}";
+
+                // Show the URL in a MessageBox for debugging
+                MessageBox.Show($"Fetching products from: {url}", "Debug Info", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                var response = await httpClient.GetStringAsync(url);
+
+                // Show the raw response in a MessageBox for debugging
+                MessageBox.Show($"Response: {response}", "API Response", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 products = JsonConvert.DeserializeObject<List<UserProductModel>>(response);
-                ProductsList.ItemsSource = products; // Menampilkan produk di UI
+                ProductsList.ItemsSource = products;
             }
             catch (Exception ex)
             {
+                // Show error in a MessageBox
                 MessageBox.Show($"Error loading products: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -104,7 +115,7 @@ namespace Ecycle.Pages
                 Deskripsi = txtProductDescription.Text,
                 Stok = int.Parse(txtProductStock.Text),
                 Harga = int.Parse(txtProductPrice.Text),
-                penggunaID = 1 // Ganti dengan ID pengguna yang sesuai
+                penjualID = UserSession.PenggunaID // Ganti dengan ID pengguna yang sesuai
             };
 
             try
@@ -112,6 +123,8 @@ namespace Ecycle.Pages
                 using var httpClient = new HttpClient();
                 var json = JsonConvert.SerializeObject(newProduct);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                //var url = $"{createProductEndpoint}/{UserSession.PenggunaID}";
+                //var response = await httpClient.PostAsync(url, content);
                 var response = await httpClient.PostAsync(createProductEndpoint, content);
 
                 if (response.IsSuccessStatusCode)
@@ -202,25 +215,12 @@ namespace Ecycle.Pages
             {
                 using var httpClient = new HttpClient();
 
-                // Create the delete request data
-                var deleteData = new
-                {
-                    produkID = product.ProdukID,
-                    username = UserSession.Username,
-                    password = UserSession.Password,
-                    // Add the current user's ID if available
-                    penggunaID = product.penggunaID // Make sure this matches the logged-in user's ID
-                };
+                var url = $"{deleteProductEndpoint}?produkID={product.ProdukID}&username={UserSession.Username}&penjualID={UserSession.PenggunaID}";
 
-                // Log the request data for debugging (remove in production)
-                Console.WriteLine($"Attempting to delete product:\nID: {product.ProdukID}\nName: {product.Nama}\nUser: {UserSession.Username}");
+                // Log the request URL for debugging
+                Console.WriteLine($"Attempting to delete product at: {url}");
 
-                var json = JsonConvert.SerializeObject(deleteData);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                // Make the POST request to delete endpoint
-                var response = await httpClient.PostAsync(deleteProductEndpoint, content);
-                var responseContent = await response.Content.ReadAsStringAsync();
+                var response = await httpClient.DeleteAsync(url);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -234,34 +234,15 @@ namespace Ecycle.Pages
                 }
                 else
                 {
-                    // Parse the error message from the JSON response
-                    try
-                    {
-                        var errorResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
-                        var errorMessage = errorResponse.message?.ToString() ?? "Unknown error occurred";
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Response Status: {response.StatusCode}, Content: {responseContent}");
 
-                        MessageBox.Show(
-                            $"Failed to delete product:\n{errorMessage}\n\nPlease verify that you own this product and try again.",
-                            "Error",
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error
-                        );
-                    }
-                    catch
-                    {
-                        MessageBox.Show(
-                            $"Failed to delete product. Server response:\n{responseContent}",
-                            "Error",
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error
-                        );
-                    }
-
-                    // If the product wasn't found, refresh the list
-                    if (responseContent.Contains("not found"))
-                    {
-                        LoadProducts(); // Refresh the list to show current state
-                    }
+                    MessageBox.Show(
+                        $"Failed to delete product. Server response: {responseContent}",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
                 }
             }
             catch (Exception ex)
@@ -274,6 +255,7 @@ namespace Ecycle.Pages
                 );
             }
         }
+
 
     }
 }

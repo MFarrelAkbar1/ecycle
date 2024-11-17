@@ -10,6 +10,8 @@
         public int? OngkosKirim { get; set; }
         public int? KategoriID { get; set; }
         public int? penggunaID { get; set; }
+
+        public int? penjualID { get; set; }
         public int? BahanID { get; set; }
         public string NamaPenjual { get; set; }
         public string Alamat { get; set; }

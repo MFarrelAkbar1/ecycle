@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using Ecycle.Models;
 
 namespace Ecycle.Pages
 {

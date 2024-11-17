@@ -88,7 +88,7 @@ namespace Ecycle
             }
         }
 
-        private async Task<bool> VerifyCredentialsAsync(string username, string password)
+        private async Task<bool> VerifyCredentialsAsync(string username, string password_)
         {
             try
             {
@@ -97,8 +97,9 @@ namespace Ecycle
                 var body = new
                 {
                     nama = username,
-                    password = password
+                    password = password_
                 };
+
                 HttpContent content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
                 var response = await client.PatchAsync(authEndpoint, content);
 
@@ -106,9 +107,25 @@ namespace Ecycle
                 {
                     string errorMessage = await response.Content.ReadAsStringAsync();
                     MessageBox.Show($"Login failed: {errorMessage}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
                 }
 
-                return response.IsSuccessStatusCode;
+                // Parse the API response
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var loginResponse = JsonConvert.DeserializeObject<LoginResponse>(responseContent);
+
+                // Store user information in UserSession
+                UserSession.PenggunaID = loginResponse.penggunaID;
+                UserSession.Username = loginResponse.nama;
+                UserSession.Password = loginResponse.password;
+                UserSession.Alamat = loginResponse.alamat;
+                UserSession.Telepon = loginResponse.telepon;
+                UserSession.Token = loginResponse.token;
+
+                // Show the full JSON response in a MessageBox (for debugging)
+                MessageBox.Show($"Login Successful!\n\nResponse: {UserSession.PenggunaID}", "Login Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                return true;
             }
             catch (Exception ex)
             {
@@ -116,6 +133,10 @@ namespace Ecycle
                 return false;
             }
         }
+
+
+
+
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
