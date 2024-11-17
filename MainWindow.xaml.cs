@@ -8,6 +8,10 @@ namespace Ecycle
         public MainWindow()
         {
             InitializeComponent();
+
+            // Membuka jendela dalam mode fullscreen
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None; // Opsi untuk menghilangkan border
         }
 
         private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)

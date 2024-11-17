@@ -104,7 +104,7 @@ namespace Ecycle.Pages
                 Deskripsi = txtProductDescription.Text,
                 Stok = int.Parse(txtProductStock.Text),
                 Harga = int.Parse(txtProductPrice.Text),
-                PenjualID = 1 // Ganti dengan ID pengguna yang sesuai
+                penggunaID = 1 // Ganti dengan ID pengguna yang sesuai
             };
 
             try

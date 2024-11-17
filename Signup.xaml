@@ -1,7 +1,11 @@
 ﻿<Window x:Class="Ecycle.Signup"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Signup" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Signup" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" 
+        WindowState="Maximized"
+        WindowStyle="None">
     <Window.Resources>
         <!-- Style for Rounded Button -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
