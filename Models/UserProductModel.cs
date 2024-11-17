@@ -9,10 +9,10 @@
         public int? Harga { get; set; }
         public int? OngkosKirim { get; set; }
         public int? KategoriID { get; set; }
-        public int? penggunaID { get; set; }   // Add this line
+        public int? penggunaID { get; set; }
         public int? BahanID { get; set; }
         public string NamaPenjual { get; set; }
         public string Alamat { get; set; }
-        public int? Terjual { get; set; }     // Assuming this property is needed
+        public int? Terjual { get; set; }
     }
 }

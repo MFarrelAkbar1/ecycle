@@ -317,7 +317,6 @@ C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.cspro
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Account.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Cart.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Product.baml
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\UserProduct.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Signup.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Login.g.cs
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\MainWindow.g.cs
@@ -337,6 +336,7 @@ C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Login.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Article.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Home.baml
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\UserProduct.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Themes\Generic.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.g.resources
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.GeneratedMSBuildEditorConfig.editorconfig

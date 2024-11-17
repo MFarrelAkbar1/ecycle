@@ -1,4 +1,5 @@
-﻿<Page x:Class="Ecycle.Pages.Account"
+﻿<!-- Account.xaml -->
+<Page x:Class="Ecycle.Pages.Account"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Account">
@@ -24,6 +25,12 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Border Background="White" CornerRadius="20" Padding="50" VerticalAlignment="Center" HorizontalAlignment="Center" Height="678" Width="600">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- Loading Indicator -->
+                    <Grid x:Name="LoadingOverlay" Visibility="Collapsed" Panel.ZIndex="999">
+                        <Rectangle Fill="#80000000"/>
+                        <ProgressBar IsIndeterminate="True" Width="100" Height="100"/>
+                    </Grid>
+
                     <TextBlock Text="E-Cycle" FontFamily="Ubuntu" FontSize="36" FontWeight="Bold" Foreground="#333"
                                HorizontalAlignment="Center" Margin="0,5,0,20"/>
 

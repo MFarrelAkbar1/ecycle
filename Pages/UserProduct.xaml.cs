@@ -169,55 +169,61 @@ namespace Ecycle.Pages
         private async void DeleteProduct_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var product = button.DataContext as UserProductModel;
+            var product = button?.DataContext as UserProductModel;
 
             if (product == null) return;
 
+            // Konfirmasi sebelum menghapus produk
             var confirmation = MessageBox.Show($"Are you sure you want to delete {product.Nama}?", "Confirm Delete", MessageBoxButton.YesNo);
             if (confirmation != MessageBoxResult.Yes) return;
 
             try
             {
-                using var httpClient = new HttpClient();
-                var url = deleteProductEndpoint;
+                // Ambil data pengguna dari sesi login
+                var username = UserSession.Username; // Ganti dengan variabel sesi login yang sesuai
+                var password = UserSession.Password; // Ganti dengan variabel sesi login yang sesuai
 
-                // Body for delete request
-                var data = new
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
-                    produkID = product.ProdukID,
-                    username = UserSession.Username, // Ambil dari session
-                    password = UserSession.Password  // Ambil dari session
+                    MessageBox.Show("User session not found. Please log in again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                using var httpClient = new HttpClient();
+
+                // Body untuk delete request
+                var deleteData = new
+                {
+                    produkID = product.ProdukID, // ID produk
+                    username = username,         // Username dari sesi login
+                    password = password          // Password dari sesi login
                 };
 
-                var json = JsonConvert.SerializeObject(data);
-                MessageBox.Show($"Request payload: {json}"); // Debug log
-
+                var json = JsonConvert.SerializeObject(deleteData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                // Menggunakan POST atau PATCH jika DELETE tidak mendukung body
-                var request = new HttpRequestMessage
-                {
-                    Method = HttpMethod.Delete,
-                    RequestUri = new Uri(url),
-                    Content = content
-                };
+                // Gunakan POST request ke endpoint `deleteProductEndpoint`
+                var response = await httpClient.PostAsync(deleteProductEndpoint, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
 
-                var response = await httpClient.SendAsync(request);
+                // Debug: Tampilkan response dari server
+                MessageBox.Show($"Server response: {responseContent}");
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Product deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadProducts(); // Reload the product list
+                    LoadProducts(); // Perbarui daftar produk setelah berhasil menghapus
                 }
                 else
                 {
-                    string errorResponse = await response.Content.ReadAsStringAsync();
-                    MessageBox.Show($"Error from server: {errorResponse}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Failed to delete product. Server response: {responseContent}",
+                                    "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error deleting product: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error deleting product: {ex.Message}\n{ex.StackTrace}",
+                               "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

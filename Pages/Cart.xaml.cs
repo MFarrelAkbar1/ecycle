@@ -16,6 +16,11 @@ namespace Ecycle.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            if (CartStorage.Items.Count == 0)
+            {
+                MessageBox.Show("Your cart is empty. Please add some products!", "Cart Empty", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
             LoadCartItems();
             DisplayTotalPrice();
         }
@@ -40,8 +45,8 @@ namespace Ecycle.Pages
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
 
-                var itemName = new TextBlock { Text = item.ProductName, FontWeight = FontWeights.Bold, FontSize = 16 };
-                var itemPrice = new TextBlock { Text = $"Price: {item.UnitPrice:C}", FontWeight = FontWeights.Bold, Foreground = Brushes.Green, FontSize = 14 };
+                var itemName = new TextBlock { Text = $"{item.ProductName} (x{item.Quantity})", FontWeight = FontWeights.Bold, FontSize = 16 };
+                var itemPrice = new TextBlock { Text = $"Total: {item.TotalPrice:C}", FontWeight = FontWeights.Bold, Foreground = Brushes.Green, FontSize = 14 };
 
                 // Quantity Controls
                 var quantityPanel = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
@@ -57,15 +62,14 @@ namespace Ecycle.Pages
                 quantityPanel.Children.Add(quantityText);
                 quantityPanel.Children.Add(increaseButton);
 
-                // Smaller Delete Button
                 var deleteButton = new Button
                 {
                     Content = "X",
                     Background = Brushes.Red,
                     Foreground = Brushes.White,
-                    Width = 25,  // Smaller width
-                    Height = 25, // Smaller height
-                    FontSize = 12, // Smaller font size
+                    Width = 25,
+                    Height = 25,
+                    FontSize = 12,
                     Margin = new Thickness(5, 0, 0, 0),
                     Padding = new Thickness(0)
                 };
@@ -88,8 +92,8 @@ namespace Ecycle.Pages
         private void IncreaseQuantity(CartItemModel item)
         {
             item.Quantity++;
-            DisplayTotalPrice();
             LoadCartItems();
+            DisplayTotalPrice();
         }
 
         private void DecreaseQuantity(CartItemModel item)
@@ -97,8 +101,8 @@ namespace Ecycle.Pages
             if (item.Quantity > 1)
             {
                 item.Quantity--;
-                DisplayTotalPrice();
                 LoadCartItems();
+                DisplayTotalPrice();
             }
             else
             {
@@ -109,8 +113,8 @@ namespace Ecycle.Pages
         private void DeleteItem(CartItemModel item)
         {
             CartStorage.Items.Remove(item);
-            DisplayTotalPrice();
             LoadCartItems();
+            DisplayTotalPrice();
         }
 
         private void DisplayTotalPrice()

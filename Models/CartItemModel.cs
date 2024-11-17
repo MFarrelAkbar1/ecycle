@@ -2,11 +2,12 @@
 {
     public class CartItemModel
     {
-        public int CartItemId { get; set; }
-        public int ProductId { get; set; }
-        public string ProductName { get; set; } = string.Empty;
-        public int Quantity { get; set; } = 1;
-        public decimal UnitPrice { get; set; }
-        public decimal TotalPrice => Quantity * UnitPrice; // Computed property
+        public int ProductId { get; set; } // ID Produk
+        public string ProductName { get; set; } // Nama Produk
+        public decimal UnitPrice { get; set; } // Harga Satuan
+        public int Quantity { get; set; } // Jumlah
+
+        // Menghitung total harga berdasarkan jumlah
+        public decimal TotalPrice => UnitPrice * Quantity;
     }
 }

@@ -70,18 +70,31 @@ namespace Ecycle.Pages
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            int quantity = int.Parse(txtQuantity.Text);
-
-            CartStorage.Items.Add(new CartItemModel
+            try
             {
-                ProductId = int.Parse(txtProductId.Text),
-                ProductName = txtProductName.Text,
-                Quantity = quantity,
-                UnitPrice = decimal.Parse(txtProductPrice.Text.Replace("Price: ", "").Replace("$", ""))
-            });
+                int quantity = int.Parse(txtQuantity.Text);
+                string priceText = txtProductPrice.Text.Replace("Price: Rp", "").Replace(",", "").Trim();
+                decimal unitPrice = decimal.Parse(priceText);
 
-            MessageBox.Show("Product added to cart!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                CartStorage.Items.Add(new CartItemModel
+                {
+                    ProductId = int.Parse(txtProductId.Text),
+                    ProductName = txtProductName.Text,
+                    Quantity = quantity,
+                    UnitPrice = unitPrice
+                });
+
+                MessageBox.Show("Product added to cart!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Navigate to the Cart page after adding to cart
+                NavigationService.Navigate(new Cart());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to add product to cart: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
