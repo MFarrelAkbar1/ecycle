@@ -164,7 +164,7 @@ namespace Ecycle.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Ecycle;component/pages/account.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Ecycle;V1.0.0.0;component/pages/account.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Account.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

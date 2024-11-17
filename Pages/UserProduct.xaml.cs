@@ -171,59 +171,107 @@ namespace Ecycle.Pages
             var button = sender as Button;
             var product = button?.DataContext as UserProductModel;
 
-            if (product == null) return;
+            if (product == null)
+            {
+                MessageBox.Show("No product selected for deletion.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-            // Konfirmasi sebelum menghapus produk
-            var confirmation = MessageBox.Show($"Are you sure you want to delete {product.Nama}?", "Confirm Delete", MessageBoxButton.YesNo);
+            // Validate user session first
+            if (string.IsNullOrEmpty(UserSession.Username) || string.IsNullOrEmpty(UserSession.Password))
+            {
+                MessageBox.Show(
+                    "You must be logged in to delete products. Please log in again.",
+                    "Authentication Required",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            }
+
+            var confirmation = MessageBox.Show(
+                $"Are you sure you want to delete product '{product.Nama}' (ID: {product.ProdukID})?",
+                "Confirm Delete",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning
+            );
+
             if (confirmation != MessageBoxResult.Yes) return;
 
             try
             {
-                // Ambil data pengguna dari sesi login
-                var username = UserSession.Username; // Ganti dengan variabel sesi login yang sesuai
-                var password = UserSession.Password; // Ganti dengan variabel sesi login yang sesuai
-
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                {
-                    MessageBox.Show("User session not found. Please log in again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-
                 using var httpClient = new HttpClient();
 
-                // Body untuk delete request
+                // Create the delete request data
                 var deleteData = new
                 {
-                    produkID = product.ProdukID, // ID produk
-                    username = username,         // Username dari sesi login
-                    password = password          // Password dari sesi login
+                    produkID = product.ProdukID,
+                    username = UserSession.Username,
+                    password = UserSession.Password,
+                    // Add the current user's ID if available
+                    penggunaID = product.penggunaID // Make sure this matches the logged-in user's ID
                 };
+
+                // Log the request data for debugging (remove in production)
+                Console.WriteLine($"Attempting to delete product:\nID: {product.ProdukID}\nName: {product.Nama}\nUser: {UserSession.Username}");
 
                 var json = JsonConvert.SerializeObject(deleteData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                // Gunakan POST request ke endpoint `deleteProductEndpoint`
+                // Make the POST request to delete endpoint
                 var response = await httpClient.PostAsync(deleteProductEndpoint, content);
                 var responseContent = await response.Content.ReadAsStringAsync();
 
-                // Debug: Tampilkan response dari server
-                MessageBox.Show($"Server response: {responseContent}");
-
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Product deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadProducts(); // Perbarui daftar produk setelah berhasil menghapus
+                    MessageBox.Show(
+                        "Product deleted successfully!",
+                        "Success",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                    );
+                    LoadProducts(); // Reload the product list
                 }
                 else
                 {
-                    MessageBox.Show($"Failed to delete product. Server response: {responseContent}",
-                                    "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    // Parse the error message from the JSON response
+                    try
+                    {
+                        var errorResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                        var errorMessage = errorResponse.message?.ToString() ?? "Unknown error occurred";
+
+                        MessageBox.Show(
+                            $"Failed to delete product:\n{errorMessage}\n\nPlease verify that you own this product and try again.",
+                            "Error",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error
+                        );
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                            $"Failed to delete product. Server response:\n{responseContent}",
+                            "Error",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error
+                        );
+                    }
+
+                    // If the product wasn't found, refresh the list
+                    if (responseContent.Contains("not found"))
+                    {
+                        LoadProducts(); // Refresh the list to show current state
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error deleting product: {ex.Message}\n{ex.StackTrace}",
-                               "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    $"Error deleting product:\n{ex.Message}",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
             }
         }
 
