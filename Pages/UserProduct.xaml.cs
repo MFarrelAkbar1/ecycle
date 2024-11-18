@@ -3,10 +3,12 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Text.Json;
 
 namespace Ecycle.Pages
 {
@@ -183,14 +185,13 @@ namespace Ecycle.Pages
         {
             var button = sender as Button;
             var product = button?.DataContext as UserProductModel;
-
             if (product == null)
             {
                 MessageBox.Show("No product selected for deletion.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            // Validate user session first
+            // Validate user session with correct case for Password
             if (string.IsNullOrEmpty(UserSession.Username) || string.IsNullOrEmpty(UserSession.Password))
             {
                 MessageBox.Show(
@@ -215,12 +216,35 @@ namespace Ecycle.Pages
             {
                 using var httpClient = new HttpClient();
 
-                var url = $"{deleteProductEndpoint}?produkID={product.ProdukID}&username={UserSession.Username}&penjualID={UserSession.PenggunaID}";
+                // Add authentication headers
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                // Log the request URL for debugging
-                Console.WriteLine($"Attempting to delete product at: {url}");
+                // Create the request body with proper case for Username and Password
+                var deleteData = new
+                {
+                    produkID = product.ProdukID,
+                    Username = UserSession.Username,  // Correct case
+                    Password = UserSession.Password,  // Correct case
+                    penjualID = UserSession.PenggunaID
+                };
 
-                var response = await httpClient.DeleteAsync(url);
+                // Create DELETE request with the properly cased data
+                var request = new HttpRequestMessage(HttpMethod.Delete,
+                    "https://ecycle-be-hnawbcbvhkfse3b3.southeastasia-01.azurewebsites.net/product/delete");
+
+                var json = JsonConvert.SerializeObject(deleteData);
+                request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                // Log for debugging
+                Console.WriteLine($"Request URL: {request.RequestUri}");
+                Console.WriteLine($"Request content: {json}");
+
+                var response = await httpClient.SendAsync(request);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine($"Response Status: {response.StatusCode}");
+                Console.WriteLine($"Response Content: {responseContent}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -234,11 +258,8 @@ namespace Ecycle.Pages
                 }
                 else
                 {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine($"Response Status: {response.StatusCode}, Content: {responseContent}");
-
                     MessageBox.Show(
-                        $"Failed to delete product. Server response: {responseContent}",
+                        $"Failed to delete product.\nStatus: {response.StatusCode}\nResponse: {responseContent}",
                         "Error",
                         MessageBoxButton.OK,
                         MessageBoxImage.Error
@@ -247,6 +268,7 @@ namespace Ecycle.Pages
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Exception details: {ex}");
                 MessageBox.Show(
                     $"Error deleting product:\n{ex.Message}",
                     "Error",
@@ -255,7 +277,5 @@ namespace Ecycle.Pages
                 );
             }
         }
-
-
     }
 }
