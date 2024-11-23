@@ -11,7 +11,16 @@
 
         <!-- Back Button -->
         <Button Content="Back" Width="100" Height="40" Background="#34A853" Foreground="White" FontSize="14"
-                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="BackButton_Click" />
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="BackButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0"
+                            CornerRadius="20" Width="100" Height="40">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <!-- Scrollable Product Details -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
@@ -47,15 +56,49 @@
 
                     <!-- Quantity Control -->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
-                        <Button Content="-" Width="30" Height="30" Click="DecreaseQuantity_Click" />
+                        <!-- Decrease Button -->
+                        <Button Content="-" Width="40" Height="40" Background="#FF4C4C" Foreground="White" FontSize="14"
+                                Click="DecreaseQuantity_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0"
+                                            CornerRadius="20" Width="40" Height="40">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <!-- Quantity Text -->
                         <TextBlock x:Name="txtQuantity" Text="1" FontSize="16" Width="40" TextAlignment="Center" VerticalAlignment="Center" />
-                        <Button Content="+" Width="30" Height="30" Click="IncreaseQuantity_Click" />
+
+                        <!-- Increase Button -->
+                        <Button Content="+" Width="40" Height="40" Background="#34A853" Foreground="White" FontSize="14"
+                                Click="IncreaseQuantity_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0"
+                                            CornerRadius="20" Width="40" Height="40">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                     </StackPanel>
 
                     <!-- Add to Cart Button -->
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                        <Button Content="Add to Cart" Width="150" Height="40" Background="#34A853" Foreground="White" 
-                                Margin="0,0,10,0" Click="AddToCart_Click" />
+                        <Button Content="Add to Cart" Width="150" Height="50" Background="#34A853" Foreground="White" FontSize="14"
+                                Click="AddToCart_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0"
+                                            CornerRadius="25" Width="150" Height="50">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>
