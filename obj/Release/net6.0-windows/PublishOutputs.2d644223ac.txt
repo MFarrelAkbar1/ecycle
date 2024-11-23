@@ -1,0 +1,13 @@
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Ecycle.exe
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Ecycle.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Ecycle.deps.json
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Ecycle.runtimeconfig.json
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Ecycle.pdb
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Newtonsoft.Json.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\Npgsql.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\System.Diagnostics.DiagnosticSource.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\System.Text.Encodings.Web.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\System.Text.Json.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Release\net6.0-windows\publish\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

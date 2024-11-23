@@ -131,5 +131,6 @@ namespace Ecycle.Pages
                 MessageBox.Show("Invalid Product ID format.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
     }
 }

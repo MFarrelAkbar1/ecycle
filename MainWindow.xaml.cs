@@ -23,6 +23,11 @@ namespace Ecycle
                 welcomePanel.Visibility = Visibility.Collapsed;
             }
         }
+        private void BelanjaSekarang_Click(object sender, RoutedEventArgs e)
+        {
+            navframe.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative));
+            welcomePanel.Visibility = Visibility.Collapsed;
+        }
 
         private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {

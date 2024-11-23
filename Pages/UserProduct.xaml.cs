@@ -102,6 +102,7 @@ namespace Ecycle.Pages
 
         private async void SaveProduct_Click(object sender, RoutedEventArgs e)
         {
+            // Validation
             if (string.IsNullOrWhiteSpace(txtProductName.Text) ||
                 string.IsNullOrWhiteSpace(txtProductDescription.Text) ||
                 string.IsNullOrWhiteSpace(txtProductPrice.Text) ||
@@ -111,42 +112,76 @@ namespace Ecycle.Pages
                 return;
             }
 
-            var newProduct = new UserProductModel
-            {
-                Nama = txtProductName.Text,
-                Deskripsi = txtProductDescription.Text,
-                Stok = int.Parse(txtProductStock.Text),
-                Harga = int.Parse(txtProductPrice.Text),
-                penjualID = UserSession.PenggunaID // Ganti dengan ID pengguna yang sesuai
-            };
-
             try
             {
+                // Parse numeric values
+                if (!int.TryParse(txtProductStock.Text, out int stock))
+                {
+                    MessageBox.Show("Stock must be a valid number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                if (!int.TryParse(txtProductPrice.Text, out int price))
+                {
+                    MessageBox.Show("Price must be a valid number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                // Create new product with all fields
+                var newProduct = new
+                {
+                    nama = txtProductName.Text,
+                    deskripsi = txtProductDescription.Text,  // Make sure this is included
+                    stok = stock,                            // Use the parsed integer value
+                    terjual = 0,                            // Initialize with 0
+                    harga = price,
+                    ongkosKirim = 0,                        // Initialize with 0 or null
+                    kategoriID = (int?)null,                // Keep as null if not needed
+                    penjualID = UserSession.PenggunaID,     // Include the seller ID
+                    bahanID = (int?)null                    // Keep as null if not needed
+                };
+
                 using var httpClient = new HttpClient();
+
+                // Set content type header
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Serialize and log the request body for debugging
                 var json = JsonConvert.SerializeObject(newProduct);
+                Console.WriteLine($"Request body: {json}");
+
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                //var url = $"{createProductEndpoint}/{UserSession.PenggunaID}";
-                //var response = await httpClient.PostAsync(url, content);
+
+                // Log the URL being called
+                Console.WriteLine($"Calling endpoint: {createProductEndpoint}");
+
                 var response = await httpClient.PostAsync(createProductEndpoint, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // Log the response
+                Console.WriteLine($"Response Status: {response.StatusCode}");
+                Console.WriteLine($"Response Content: {responseContent}");
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Product saved successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadProducts(); // Perbarui daftar produk
-                    ProductForm.Visibility = Visibility.Collapsed; // Sembunyikan form input
+                    LoadProducts(); // Refresh the product list
+                    ProductForm.Visibility = Visibility.Collapsed; // Hide the input form
+                    ResetForm(); // Clear the form
                 }
                 else
                 {
-                    string errorResponse = await response.Content.ReadAsStringAsync();
-                    MessageBox.Show($"Error saving product: {errorResponse}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Error saving product. Status: {response.StatusCode}\nResponse: {responseContent}",
+                        "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Exception details: {ex}");
                 MessageBox.Show($"Error saving product: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         private async void UpdateProduct_Click(object sender, RoutedEventArgs e)
         {
             if (currentProduct == null) return;
