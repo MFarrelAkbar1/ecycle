@@ -300,19 +300,6 @@ D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\e
 D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\ecycle-new\ecycle\obj\Debug\net6.0-windows\Ecycle.pdb
 D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\ecycle-new\ecycle\obj\Debug\net6.0-windows\Ecycle.genruntimeconfig.cache
 D:\KAMPUS\UGM\Perkuliahan\Tahun 3\Semester 5\Proyek Junior Teknologi Informasi\ecycle-new\ecycle\obj\Debug\net6.0-windows\ref\Ecycle.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.exe
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.deps.json
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.runtimeconfig.json
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.pdb
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Npgsql.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\System.Text.Json.dll
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle.csproj.AssemblyReference.cache
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Account.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Cart.baml
@@ -327,10 +314,23 @@ C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Home.g
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\Product.g.cs
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Pages\UserProduct.g.cs
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Signup.g.cs
-C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle_MarkupCompile.cache
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Ecycle_MarkupCompile.lref
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.exe
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.deps.json
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.runtimeconfig.json
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Ecycle.pdb
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\Npgsql.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\App.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\Login.baml
 C:\Users\HP VICTUS\Documents\GitHub\ecycle\obj\Debug\net6.0-windows\MainWindow.baml

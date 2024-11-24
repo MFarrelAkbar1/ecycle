@@ -37,11 +37,11 @@
                 <!-- Shopping Summary -->
                 <Border Background="White" BorderBrush="#DDD" BorderThickness="4" CornerRadius="10" Padding="20" Grid.Column="1" Margin="0,0,0,510">
                     <StackPanel>
-                        <TextBlock Text="Ringkasan Belanja" FontWeight="Bold" FontSize="18" Foreground="#333"
+                        <TextBlock Text="Shopping" FontWeight="Bold" FontSize="18" Foreground="#333"
                                    Margin="0,0,0,10"/>
                         <TextBlock x:Name="TotalPriceText" Text="Total Price: Rp0,00" FontSize="16" FontWeight="Bold"
                                    Foreground="#2E7D32" Margin="10,20,0,10"/>
-                        <Button Content="Beli Sekarang" FontSize="16" Width="200" Height="50" Foreground="White" Cursor="Hand"
+                        <Button Content="Buy Now!" FontSize="16" Width="200" Height="50" Foreground="White" Cursor="Hand"
                                 HorizontalAlignment="Center" Background="#4CAF50">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
